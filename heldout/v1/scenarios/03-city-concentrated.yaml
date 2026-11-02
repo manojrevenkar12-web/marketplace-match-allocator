@@ -1,0 +1,6 @@
+name: city-concentrated
+about: Demand piles up in a few city regions while partner density follows it only weakly, leaving cities saturated and rural regions badly short.
+seed: 61448
+overrides:
+  region_demand_sigma: 1.3
+  supply_elasticity: 0.45

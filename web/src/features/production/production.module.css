@@ -1,0 +1,86 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  gap: var(--space-5);
+}
+.card {
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+}
+.card h3 {
+  font-size: var(--step-1);
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.facts {
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.facts div {
+  display: grid;
+  gap: var(--space-1);
+  border-top: 1px solid var(--grid);
+  padding-top: var(--space-2);
+}
+.facts dt {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.facts dd {
+  margin: 0;
+  font-weight: 650;
+}
+.gate {
+  grid-column: 1 / -1;
+}
+.checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--space-2) var(--space-5);
+}
+.checks li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: baseline;
+  border-top: 1px solid var(--grid);
+  padding-top: var(--space-2);
+  font-size: var(--step--1);
+}
+.mark {
+  font-weight: 700;
+}
+.pass {
+  color: var(--truth);
+}
+.fail {
+  color: var(--biased);
+}
+.miss {
+  color: var(--muted);
+}
+.name {
+  overflow-wrap: anywhere;
+}
+.actual {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.verdict {
+  font-size: var(--step-1);
+  font-weight: 650;
+  margin: 0;
+}

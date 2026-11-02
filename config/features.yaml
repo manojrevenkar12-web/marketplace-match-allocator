@@ -1,0 +1,10 @@
+# Point-in-time feature definitions. The same windows are used by the dbt models (training) and the
+# online feature store (serving); tests/test_feature_parity.py checks they agree.
+lead_window_days: 60          # leads counted for the contact rate
+lead_lag_days: 2              # leads younger than this are left out of the contact-rate denominator
+win_window_days: 120          # wins counted for the win rate
+win_lead_from_days: 150       # leads delivered between t-150 and t-30 form the win-rate denominator
+win_lead_to_days: 30
+response_window_days: 60      # mean response time over contacts in this window
+demand_window_days: 7
+prior: { contact_rate: 0.6, contact_weight: 4, win_rate: 0.07, win_weight: 10, response_hours: 12 }

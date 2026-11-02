@@ -1,0 +1,29 @@
+# Local stack: Postgres for capacity and decisions, the matching service, and a one-off data build.
+# `docker compose run --rm seed` writes sample logs, builds the warehouse and registers a model;
+# then `docker compose up api`.
+services:
+  postgres:
+    image: postgres:16
+    environment: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: mma }
+    ports: ["5432:5432"]
+    healthcheck: { test: ["CMD", "pg_isready", "-U", "postgres"], interval: 5s, retries: 10 }
+  seed:
+    build: .
+    volumes: ["data:/data", "./scripts:/app/scripts:ro"]
+    command: >
+      sh -c "python scripts/sample_data.py /data/raw &&
+             python -m mma.pipeline build --raw /data/raw --warehouse /data/warehouse.duckdb &&
+             python -m mma.pipeline parity --raw /data/raw --warehouse /data/warehouse.duckdb --out /data/parity.json &&
+             python -m mma.pipeline train --warehouse /data/warehouse.duckdb --cutoff 120 --store /data/mlflow --parity /data/parity.json --out /data/candidate.json &&
+             python -m mma.pipeline promote --candidate /data/candidate.json --store /data/mlflow"
+  api:
+    build: .
+    depends_on: { postgres: { condition: service_healthy } }
+    environment:
+      MMA_DATABASE_URL: postgresql://postgres:postgres@postgres:5432/mma
+      MMA_RAW: /data/raw
+      MMA_MLFLOW: /data/mlflow
+    volumes: ["data:/data"]
+    ports: ["8000:8000"]
+volumes:
+  data:

@@ -1,0 +1,3 @@
+psi: 0.2            # population stability index above which a feature counts as drifted
+ece: 0.04           # calibration alert on the newest matured contact labels
+recent_days: 7

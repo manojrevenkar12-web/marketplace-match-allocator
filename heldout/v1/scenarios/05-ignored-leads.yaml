@@ -1,0 +1,7 @@
+name: ignored-leads
+about: Partners on average call only about half the leads they buy, and slowly, so many homeowners risk never getting a call.
+seed: 84556
+overrides:
+  partner:
+    contact_logit: { mean: 0.0, sd: 0.8 }
+    speed_hours: { median: 14, sigma: 0.75 }

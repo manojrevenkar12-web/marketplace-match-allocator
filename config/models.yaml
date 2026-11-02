@@ -1,0 +1,27 @@
+# Two calibrated models per (request, partner): will the partner call the homeowner, and will it win
+# the project. Time-ordered slices relative to the end of the logged period (days); a label is used
+# only once it has matured.
+features_from_day: 30            # the first month warms up the partner history features
+contact:
+  maturity_days: 3
+  slices: { train_end: 25, calib_end: 14 }   # days before the matured cut-off where train / calib end
+win:
+  maturity_days: 40
+  slices: { train_end: 18, calib_end: 9 }
+lightgbm:
+  objective: binary
+  learning_rate: 0.05
+  num_leaves: 31
+  min_data_in_leaf: 100
+  feature_fraction: 0.9
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l2: 1.0
+  verbose: -1
+  seed: 7
+rounds: 400
+early_stopping: 30
+ece_bins: 10
+registry:
+  model_name: partner-match-scorer
+  champion_alias: champion

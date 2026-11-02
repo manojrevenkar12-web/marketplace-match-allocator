@@ -1,0 +1,22 @@
+# Gates. "model" decides whether a candidate model may become the champion (pipeline); "floors" fail
+# the build (study, held-out, serving); "targets" are reported. Set before the held-out set was run.
+model:
+  max_ece: { contact: 0.03, win: 0.015 }
+  min_auc: { contact: 0.65, win: 0.58 }
+  max_auc_drop_vs_champion: 0.01
+  max_feature_mismatches: 0
+floors:
+  - { name: prepare.feature_mismatches, op: "==", value: 0, about: "training features equal serving features" }
+  - { name: prepare.dbt_failed, op: "==", value: 0 }
+  - { name: frontier.balanced.project_lift, op: ">=", value: 0.0, about: "the model policy wins at least as many projects as the rules" }
+  - { name: frontier.balanced.revenue_ratio, op: ">=", value: 0.97, about: "and keeps lead revenue within 3%" }
+  - { name: frontier.balanced.partner_profit_per_lead_lift, op: ">=", value: 0.0 }
+  - { name: experiments.budget_split.project.coverage, op: ">=", value: 0.7 }
+  - { name: experiments.aa_false_positive_rate.project, op: "<=", value: 0.2 }
+  - { name: heldout.project_lift_share, op: ">=", value: 0.75, about: "the model wins more projects than the rules in most blind worlds" }
+  - { name: heldout.min_revenue_ratio, op: ">=", value: 0.9 }
+  - { name: serving.oversold_leads, op: "==", value: 0 }
+targets:
+  - { name: frontier.balanced.project_lift, op: ">=", value: 0.05 }
+  - { name: experiments.budget_split.project.abs_relative_bias, op: "<=", value: 0.25 }
+  - { name: serving.p95_ms, op: "<=", value: 50 }

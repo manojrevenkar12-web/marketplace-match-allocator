@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: fct_training_pairs
+    description: One row per delivered lead with point-in-time features and outcome labels.
+    columns:
+      - name: partner_fill
+        tests: [not_null]
+      - name: n_candidates
+        tests: [not_null]
+  - name: fct_match_kpis
+    description: Daily matching KPIs per region and category.

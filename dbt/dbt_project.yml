@@ -1,0 +1,27 @@
+name: matching
+version: "1.0.0"
+config-version: 2
+profile: matching
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+vars:
+  raw: "../runs/quick/raw"
+  # feature windows: must equal config/features.yaml (tests/test_feature_parity.py checks)
+  lead_window_days: 60
+  lead_lag_days: 2
+  win_window_days: 120
+  win_lead_from_days: 150
+  win_lead_to_days: 30
+  response_window_days: 60
+  demand_window_days: 7
+  prior_contact_rate: 0.6
+  prior_contact_weight: 4
+  prior_win_rate: 0.07
+  prior_win_weight: 10
+  prior_response_hours: 12
+models:
+  matching:
+    staging: { +materialized: view }
+    intermediate: { +materialized: table }
+    marts: { +materialized: table }

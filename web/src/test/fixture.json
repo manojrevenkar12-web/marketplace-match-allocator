@@ -1,0 +1,395 @@
+{
+  "generated_at": "2026-11-02T10:00:00+00:00",
+  "profile": "full",
+  "study": {
+    "profile": "full",
+    "prepare": {
+      "dbt": { "nodes": 21, "tests": 11, "failed": 0 },
+      "parity": {
+        "pairs": 195387,
+        "online_rows": 195387,
+        "offline_rows": 195387,
+        "mismatches": 0,
+        "by_feature": {
+          "category": 0,
+          "budget": 0,
+          "timeframe": 0,
+          "qualified": 0,
+          "hour": 0,
+          "distance": 0,
+          "partner_cap": 0,
+          "partner_fill": 0,
+          "partner_leads_30d": 0,
+          "partner_contact_rate": 0,
+          "partner_win_rate": 0,
+          "partner_response_hours": 0,
+          "partner_tenure_days": 0,
+          "partner_ncats": 0,
+          "region_pressure": 0,
+          "n_candidates": 0
+        }
+      },
+      "models": {
+        "contact": {
+          "rows": { "train": 102739, "calib": 26276, "test": 16821 },
+          "best_iteration": 115,
+          "test": {
+            "n": 16821,
+            "base_rate": 0.6965697639854943,
+            "auc": 0.7238664422162905,
+            "brier": 0.18223768798063472,
+            "logloss": 0.549727746968063,
+            "ece": 0.012804479123868269,
+            "mean_predicted": 0.6897304990303103
+          },
+          "test_uncalibrated": {
+            "n": 16821,
+            "base_rate": 0.6965697639854943,
+            "auc": 0.7246332275692983,
+            "brier": 0.18224264448662156,
+            "logloss": 0.5441616408689717,
+            "ece": 0.02011619253618571,
+            "mean_predicted": 0.6790028657848222
+          },
+          "reliability": [
+            { "predicted": 0.3043680459241095, "observed": 0.34699940582293526, "n": 1683 },
+            { "predicted": 0.5183706098452727, "observed": 0.5023781212841855, "n": 1682 },
+            { "predicted": 0.5741334422529818, "observed": 0.5868014268727705, "n": 1682 },
+            { "predicted": 0.6528900364324853, "observed": 0.654577883472057, "n": 1682 },
+            { "predicted": 0.7000932906780803, "observed": 0.7253269916765755, "n": 1682 },
+            { "predicted": 0.7504249641461419, "observed": 0.7580261593341261, "n": 1682 },
+            { "predicted": 0.7840814612476242, "observed": 0.7740784780023782, "n": 1682 },
+            { "predicted": 0.8302295185418939, "observed": 0.8263971462544589, "n": 1682 },
+            { "predicted": 0.8677069430211535, "observed": 0.8757431629013079, "n": 1682 },
+            { "predicted": 0.9152357878763235, "observed": 0.915576694411415, "n": 1682 }
+          ]
+        },
+        "win": {
+          "rows": { "train": 53872, "calib": 21967, "test": 19118 },
+          "best_iteration": 111,
+          "test": {
+            "n": 19118,
+            "base_rate": 0.048959096139763576,
+            "auc": 0.6492512318466559,
+            "brier": 0.04597175329064585,
+            "logloss": 0.18964868994562892,
+            "ece": 0.00595158457280572,
+            "mean_predicted": 0.051879542066855446
+          },
+          "test_uncalibrated": {
+            "n": 19118,
+            "base_rate": 0.048959096139763576,
+            "auc": 0.6507269329016111,
+            "brier": 0.04591210546837438,
+            "logloss": 0.18884033084033505,
+            "ece": 0.003047527102372029,
+            "mean_predicted": 0.04716623644318327
+          },
+          "reliability": [
+            { "predicted": 0.010449845643200503, "observed": 0.017259414225941423, "n": 1912 },
+            { "predicted": 0.02048003848631081, "observed": 0.02615062761506276, "n": 1912 },
+            { "predicted": 0.029332068190224585, "observed": 0.030334728033472803, "n": 1912 },
+            { "predicted": 0.03405469447102656, "observed": 0.03399581589958159, "n": 1912 },
+            { "predicted": 0.03964670128153051, "observed": 0.04131799163179916, "n": 1912 },
+            { "predicted": 0.051515604842714675, "observed": 0.04445606694560669, "n": 1912 },
+            { "predicted": 0.05637015314434669, "observed": 0.047594142259414225, "n": 1912 },
+            { "predicted": 0.06889973840957359, "observed": 0.06694560669456066, "n": 1912 },
+            { "predicted": 0.08244381002000742, "observed": 0.07430664573521717, "n": 1911 },
+            { "predicted": 0.12565733838896814, "observed": 0.10727367870225013, "n": 1911 }
+          ]
+        },
+        "cutoff": 120
+      },
+      "training_rows": 195387
+    },
+    "designs": {
+      "request_split": "Randomise requests 50/50; both arms draw on the same partner volume",
+      "budget_split": "Randomise requests 50/50 and give each arm its own half of every partner's monthly volume",
+      "region_split": "Randomise postcode regions 50/50; partners serving both arms are shared",
+      "switchback": "Alternate the policy every 3 days, in random order; volume is shared"
+    },
+    "experiments": {
+      "request_split": {
+        "project": {
+          "mean_estimate": -0.06660279706175665,
+          "mean_truth": 0.011449999999999998,
+          "bias": -0.07805279706175665,
+          "relative_bias": -6.816838171332459,
+          "rmse": 0.07831121921568344,
+          "coverage": 0.0,
+          "mean_se": 0.0040279361364355774,
+          "replications": 10
+        },
+        "revenue": {
+          "mean_estimate": -85.31080318844276,
+          "mean_truth": 0.06489583333333257,
+          "bias": -85.37569902177611,
+          "relative_bias": -1315.5805948781065,
+          "rmse": 85.38567515355061,
+          "coverage": 0.0,
+          "mean_se": 2.429441164074992,
+          "replications": 10
+        },
+        "partner_profit": {
+          "mean_estimate": -37.13903607481168,
+          "mean_truth": 34.93260416666667,
+          "bias": -72.07164024147835,
+          "relative_bias": -2.063162537142033,
+          "rmse": 73.53839794894367,
+          "coverage": 0.0,
+          "mean_se": 11.911021332044943,
+          "replications": 10
+        },
+        "contacted": {
+          "mean_estimate": -0.41234191628272426,
+          "mean_truth": 0.07774166666666667,
+          "bias": -0.4900835829493909,
+          "relative_bias": -6.304001495758056,
+          "rmse": 0.490145075346851,
+          "coverage": 0.0,
+          "mean_se": 0.0051846146070645485,
+          "replications": 10
+        }
+      },
+      "budget_split": {
+        "project": {
+          "mean_estimate": 0.007514577522509752,
+          "mean_truth": 0.011449999999999998,
+          "bias": -0.003935422477490245,
+          "relative_bias": -0.3437050198681437,
+          "rmse": 0.0047931614342835455,
+          "coverage": 1.0,
+          "mean_se": 0.0041019126359376455,
+          "replications": 10
+        },
+        "revenue": {
+          "mean_estimate": 0.01366156226006865,
+          "mean_truth": 0.06489583333333257,
+          "bias": -0.05123427107326393,
+          "relative_bias": -0.7894847549010264,
+          "rmse": 2.7533475407706645,
+          "coverage": 0.9,
+          "mean_se": 2.3799396874822705,
+          "replications": 10
+        },
+        "partner_profit": {
+          "mean_estimate": 27.944548045058866,
+          "mean_truth": 34.93260416666667,
+          "bias": -6.9880561216078005,
+          "relative_bias": -0.2000439500091989,
+          "rmse": 11.910804427833547,
+          "coverage": 1.0,
+          "mean_se": 11.886982821854843,
+          "replications": 10
+        },
+        "contacted": {
+          "mean_estimate": 0.05337415874055988,
+          "mean_truth": 0.07774166666666667,
+          "bias": -0.024367507926106778,
+          "relative_bias": -0.3134420571479058,
+          "rmse": 0.025596948531819874,
+          "coverage": 0.1,
+          "mean_se": 0.005662617478400458,
+          "replications": 10
+        }
+      },
+      "region_split": {
+        "project": {
+          "mean_estimate": -0.044910152009207616,
+          "mean_truth": 0.011449999999999998,
+          "bias": -0.05636015200920762,
+          "relative_bias": -4.922284018271409,
+          "rmse": 0.05734805547735469,
+          "coverage": 0.0,
+          "mean_se": 0.00549694529290095,
+          "replications": 10
+        },
+        "revenue": {
+          "mean_estimate": -69.07214820700186,
+          "mean_truth": 0.06489583333333257,
+          "bias": -69.1370440403352,
+          "relative_bias": -1065.3541296745195,
+          "rmse": 69.78347217787935,
+          "coverage": 0.0,
+          "mean_se": 4.1359972785725585,
+          "replications": 10
+        },
+        "partner_profit": {
+          "mean_estimate": -5.258956284042495,
+          "mean_truth": 34.93260416666667,
+          "bias": -40.19156045070916,
+          "relative_bias": -1.150545784074715,
+          "rmse": 43.33153611041389,
+          "coverage": 0.3,
+          "mean_se": 12.950377475283627,
+          "replications": 10
+        },
+        "contacted": {
+          "mean_estimate": -0.29024630569319676,
+          "mean_truth": 0.07774166666666667,
+          "bias": -0.3679879723598634,
+          "relative_bias": -4.733471613590268,
+          "rmse": 0.3713270292051845,
+          "coverage": 0.0,
+          "mean_se": 0.022419155414380734,
+          "replications": 10
+        }
+      },
+      "switchback": {
+        "project": {
+          "mean_estimate": -0.039760056762814626,
+          "mean_truth": 0.011449999999999998,
+          "bias": -0.05121005676281463,
+          "relative_bias": -4.472494040420492,
+          "rmse": 0.060255315896402484,
+          "coverage": 0.3,
+          "mean_se": 0.02506436221254395,
+          "replications": 10
+        },
+        "revenue": {
+          "mean_estimate": -56.881203979710826,
+          "mean_truth": 0.06489583333333257,
+          "bias": -56.94609981304414,
+          "relative_bias": -877.5000934273357,
+          "rmse": 73.91901683733244,
+          "coverage": 0.5,
+          "mean_se": 35.53665969979,
+          "replications": 10
+        },
+        "partner_profit": {
+          "mean_estimate": -12.377356594245201,
+          "mean_truth": 34.93260416666667,
+          "bias": -47.30996076091186,
+          "relative_bias": -1.3543210387405327,
+          "rmse": 56.021605248836764,
+          "coverage": 0.4,
+          "mean_se": 25.074841080588772,
+          "replications": 10
+        },
+        "contacted": {
+          "mean_estimate": -0.2581560228759328,
+          "mean_truth": 0.07774166666666667,
+          "bias": -0.3358976895425994,
+          "relative_bias": -4.320690614761703,
+          "rmse": 0.38092078855983125,
+          "coverage": 0.3,
+          "mean_se": 0.13912052562644311,
+          "replications": 10
+        }
+      }
+    },
+    "aa_budget_split_false_positive_rate": { "project": 0.0, "revenue": 0.1, "partner_profit": 0.0, "contacted": 0.0 },
+    "frontier": {
+      "rules": {
+        "requests": 24000,
+        "matched": 0.7442916666666667,
+        "leads": 48785,
+        "leads_per_request": 2.0327083333333333,
+        "contacted": 0.7040416666666667,
+        "project": 0.105875,
+        "revenue": 141.98229166666667,
+        "partner_profit": 101.584375,
+        "partner_profit_per_lead": 49.9748898226914,
+        "wins_per_lead": 0.05208568207440812
+      },
+      "balanced": {
+        "requests": 24000,
+        "matched": 0.8599583333333334,
+        "leads": 46739,
+        "leads_per_request": 1.9474583333333333,
+        "contacted": 0.77475,
+        "project": 0.11775,
+        "revenue": 141.41291666666666,
+        "partner_profit": 135.02458333333334,
+        "partner_profit_per_lead": 69.33374697789854,
+        "wins_per_lead": 0.06046342454909177
+      },
+      "revenue_first": {
+        "requests": 24000,
+        "matched": 0.863125,
+        "leads": 46852,
+        "leads_per_request": 1.9521666666666666,
+        "contacted": 0.778875,
+        "project": 0.11429166666666667,
+        "revenue": 145.34354166666665,
+        "partner_profit": 127.535625,
+        "partner_profit_per_lead": 65.33029539827542,
+        "wins_per_lead": 0.05854605993340733
+      },
+      "homeowner_first": {
+        "requests": 24000,
+        "matched": 0.9048333333333334,
+        "leads": 46689,
+        "leads_per_request": 1.945375,
+        "contacted": 0.8074166666666667,
+        "project": 0.11954166666666667,
+        "revenue": 139.47520833333334,
+        "partner_profit": 141.908125,
+        "partner_profit_per_lead": 72.94641136027758,
+        "wins_per_lead": 0.06144916361455589
+      },
+      "partner_first": {
+        "requests": 24000,
+        "matched": 0.8232916666666666,
+        "leads": 45610,
+        "leads_per_request": 1.9004166666666666,
+        "contacted": 0.7449583333333333,
+        "project": 0.11695833333333333,
+        "revenue": 130.95,
+        "partner_profit": 141.32083333333333,
+        "partner_profit_per_lead": 74.3630782723087,
+        "wins_per_lead": 0.06154352115764087
+      },
+      "balanced_without_pacing": {
+        "requests": 24000,
+        "matched": 0.7810416666666666,
+        "leads": 47011,
+        "leads_per_request": 1.9587916666666667,
+        "contacted": 0.7100833333333333,
+        "project": 0.105,
+        "revenue": 132.94625,
+        "partner_profit": 108.61208333333333,
+        "partner_profit_per_lead": 55.44851205037119,
+        "wins_per_lead": 0.05360447554827594
+      }
+    },
+    "world": { "requests_per_month": 24000, "partners": 1100, "regions": 90, "categories": 7 }
+  },
+  "heldout": null,
+  "serving": {
+    "contention": {
+      "requests": 3000,
+      "service_instances": 2,
+      "threads": 8,
+      "cap_squeezed_to": 2,
+      "leads": 590,
+      "oversold_leads": 0,
+      "decisions_vs_counter_mismatches": 0,
+      "retry_returns_same_decision": true,
+      "p50_ms": 14.578776500002277,
+      "p95_ms": 32.01643649988454,
+      "model": "local"
+    },
+    "latency": {
+      "requests": 2000,
+      "service_instances": 2,
+      "threads": 1,
+      "cap_squeezed_to": null,
+      "leads": 5463,
+      "oversold_leads": 0,
+      "decisions_vs_counter_mismatches": 0,
+      "retry_returns_same_decision": true,
+      "p50_ms": 3.9893484999993234,
+      "p95_ms": 8.115577699868481,
+      "model": "local"
+    }
+  },
+  "metrics": {},
+  "gate": {
+    "floors": [
+      { "name": "serving.oversold_leads", "op": "==", "value": 0, "actual": 0, "ok": true },
+      { "name": "heldout.project_lift_share", "op": ">=", "value": 0.75, "actual": null, "ok": false }
+    ],
+    "targets": [{ "name": "serving.p95_ms", "op": "<=", "value": 50, "actual": 8.1, "ok": true }]
+  }
+}

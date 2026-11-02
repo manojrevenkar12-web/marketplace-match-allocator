@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: stg_requests
+    description: Every homeowner request that reached matching (one row per request).
+    columns:
+      - name: request_id
+        tests: [unique, not_null]
+      - name: category
+        tests:
+          - accepted_values: { values: [solar, heat_pump, windows, roofing, kitchen, stairlift, real_estate_sale] }
+  - name: stg_matches
+    description: One row per lead delivered to a partner.
+    tests:
+      - dbt_utils_unique_combination: { columns: [request_id, partner_id] }
+    columns:
+      - name: request_id
+        tests:
+          - not_null
+          - relationships: { to: ref('stg_requests'), field: request_id }
+  - name: stg_events
+    description: Partner events after a lead (contacted, won), one per kind and lead at most.
+    columns:
+      - name: kind
+        tests: [{ accepted_values: { values: [contacted, won] } }]
+  - name: stg_partner_settings
+    description: Partner settings per month as set in the partner account (categories, regions, monthly volume, pauses).
+    columns:
+      - name: monthly_cap
+        tests: [not_null]

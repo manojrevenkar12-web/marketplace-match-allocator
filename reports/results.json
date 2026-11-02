@@ -1,0 +1,2005 @@
+{
+ "generated_at": "2026-11-02T20:44:02.607744+00:00",
+ "profile": "full",
+ "study": {
+  "profile": "full",
+  "prepare": {
+   "dbt": {
+    "nodes": 21,
+    "tests": 11,
+    "failed": 0
+   },
+   "parity": {
+    "pairs": 195387,
+    "online_rows": 195387,
+    "offline_rows": 195387,
+    "mismatches": 0,
+    "by_feature": {
+     "category": 0,
+     "budget": 0,
+     "timeframe": 0,
+     "qualified": 0,
+     "hour": 0,
+     "distance": 0,
+     "partner_cap": 0,
+     "partner_fill": 0,
+     "partner_leads_30d": 0,
+     "partner_contact_rate": 0,
+     "partner_win_rate": 0,
+     "partner_response_hours": 0,
+     "partner_tenure_days": 0,
+     "partner_ncats": 0,
+     "region_pressure": 0,
+     "n_candidates": 0
+    }
+   },
+   "models": {
+    "contact": {
+     "rows": {
+      "train": 102739,
+      "calib": 26276,
+      "test": 16821
+     },
+     "best_iteration": 115,
+     "test": {
+      "n": 16821,
+      "base_rate": 0.6965697639854943,
+      "auc": 0.7238664422162905,
+      "brier": 0.18223768798063472,
+      "logloss": 0.549727746968063,
+      "ece": 0.012804479123868269,
+      "mean_predicted": 0.6897304990303103
+     },
+     "test_uncalibrated": {
+      "n": 16821,
+      "base_rate": 0.6965697639854943,
+      "auc": 0.7246332275692983,
+      "brier": 0.18224264448662156,
+      "logloss": 0.5441616408689717,
+      "ece": 0.02011619253618571,
+      "mean_predicted": 0.6790028657848222
+     },
+     "reliability": [
+      {
+       "predicted": 0.3043680459241095,
+       "observed": 0.34699940582293526,
+       "n": 1683
+      },
+      {
+       "predicted": 0.5183706098452727,
+       "observed": 0.5023781212841855,
+       "n": 1682
+      },
+      {
+       "predicted": 0.5741334422529818,
+       "observed": 0.5868014268727705,
+       "n": 1682
+      },
+      {
+       "predicted": 0.6528900364324853,
+       "observed": 0.654577883472057,
+       "n": 1682
+      },
+      {
+       "predicted": 0.7000932906780803,
+       "observed": 0.7253269916765755,
+       "n": 1682
+      },
+      {
+       "predicted": 0.7504249641461419,
+       "observed": 0.7580261593341261,
+       "n": 1682
+      },
+      {
+       "predicted": 0.7840814612476242,
+       "observed": 0.7740784780023782,
+       "n": 1682
+      },
+      {
+       "predicted": 0.8302295185418939,
+       "observed": 0.8263971462544589,
+       "n": 1682
+      },
+      {
+       "predicted": 0.8677069430211535,
+       "observed": 0.8757431629013079,
+       "n": 1682
+      },
+      {
+       "predicted": 0.9152357878763235,
+       "observed": 0.915576694411415,
+       "n": 1682
+      }
+     ],
+     "importance": {
+      "category": 859.4,
+      "budget": 281.6,
+      "timeframe": 3406.6,
+      "qualified": 5934.3,
+      "hour": 1656.2,
+      "distance": 219.3,
+      "partner_cap": 1182.0,
+      "partner_fill": 19808.4,
+      "partner_leads_30d": 1966.5,
+      "partner_contact_rate": 73079.4,
+      "partner_win_rate": 2388.0,
+      "partner_response_hours": 2103.3,
+      "partner_tenure_days": 2235.8,
+      "partner_ncats": 76.2,
+      "region_pressure": 2042.5,
+      "n_candidates": 1415.5
+     },
+     "slices": {
+      "train": [
+       30.291720113787274,
+       91.91656797081443
+      ],
+      "calib": [
+       92.29282362406975,
+       102.91576394922583
+      ],
+      "test": [
+       103.29169302615064,
+       116.90980250953875
+      ]
+     }
+    },
+    "win": {
+     "rows": {
+      "train": 53872,
+      "calib": 21967,
+      "test": 19118
+     },
+     "best_iteration": 111,
+     "test": {
+      "n": 19118,
+      "base_rate": 0.048959096139763576,
+      "auc": 0.6492512318466559,
+      "brier": 0.04597175329064585,
+      "logloss": 0.18964868994562892,
+      "ece": 0.00595158457280572,
+      "mean_predicted": 0.051879542066855446
+     },
+     "test_uncalibrated": {
+      "n": 19118,
+      "base_rate": 0.048959096139763576,
+      "auc": 0.6507269329016111,
+      "brier": 0.04591210546837438,
+      "logloss": 0.18884033084033505,
+      "ece": 0.003047527102372029,
+      "mean_predicted": 0.04716623644318327
+     },
+     "reliability": [
+      {
+       "predicted": 0.010449845643200503,
+       "observed": 0.017259414225941423,
+       "n": 1912
+      },
+      {
+       "predicted": 0.02048003848631081,
+       "observed": 0.02615062761506276,
+       "n": 1912
+      },
+      {
+       "predicted": 0.029332068190224585,
+       "observed": 0.030334728033472803,
+       "n": 1912
+      },
+      {
+       "predicted": 0.03405469447102656,
+       "observed": 0.03399581589958159,
+       "n": 1912
+      },
+      {
+       "predicted": 0.03964670128153051,
+       "observed": 0.04131799163179916,
+       "n": 1912
+      },
+      {
+       "predicted": 0.051515604842714675,
+       "observed": 0.04445606694560669,
+       "n": 1912
+      },
+      {
+       "predicted": 0.05637015314434669,
+       "observed": 0.047594142259414225,
+       "n": 1912
+      },
+      {
+       "predicted": 0.06889973840957359,
+       "observed": 0.06694560669456066,
+       "n": 1912
+      },
+      {
+       "predicted": 0.08244381002000742,
+       "observed": 0.07430664573521717,
+       "n": 1911
+      },
+      {
+       "predicted": 0.12565733838896814,
+       "observed": 0.10727367870225013,
+       "n": 1911
+      }
+     ],
+     "importance": {
+      "category": 1273.2,
+      "budget": 1582.7,
+      "timeframe": 3233.9,
+      "qualified": 855.3,
+      "hour": 2004.9,
+      "distance": 477.1,
+      "partner_cap": 1282.5,
+      "partner_fill": 2223.3,
+      "partner_leads_30d": 1522.6,
+      "partner_contact_rate": 2926.5,
+      "partner_win_rate": 3235.7,
+      "partner_response_hours": 2568.7,
+      "partner_tenure_days": 2057.3,
+      "partner_ncats": 115.0,
+      "region_pressure": 2397.9,
+      "n_candidates": 1909.1
+     },
+     "slices": {
+      "train": [
+       30.291720113787274,
+       61.91465591159893
+      ],
+      "calib": [
+       62.29193861714083,
+       70.91655687699956
+      ],
+      "test": [
+       71.29202714305008,
+       79.91636035817879
+      ]
+     }
+    },
+    "cutoff": 120
+   },
+   "training_rows": 195387
+  },
+  "designs": {
+   "request_split": "Randomise requests 50/50; both arms draw on the same partner volume",
+   "budget_split": "Randomise requests 50/50 and give each arm its own half of every partner's monthly volume",
+   "region_split": "Randomise postcode regions 50/50; partners serving both arms are shared",
+   "switchback": "Alternate the policy every 3 days, in random order; volume is shared"
+  },
+  "experiments": {
+   "request_split": {
+    "project": {
+     "mean_estimate": -0.06660279706175665,
+     "mean_truth": 0.011449999999999998,
+     "bias": -0.07805279706175665,
+     "relative_bias": -6.816838171332459,
+     "rmse": 0.07831121921568344,
+     "coverage": 0.0,
+     "mean_se": 0.0040279361364355774,
+     "replications": 10
+    },
+    "revenue": {
+     "mean_estimate": -85.31080318844276,
+     "mean_truth": 0.06489583333333257,
+     "bias": -85.37569902177611,
+     "relative_bias": -1315.5805948781065,
+     "rmse": 85.38567515355061,
+     "coverage": 0.0,
+     "mean_se": 2.429441164074992,
+     "replications": 10
+    },
+    "partner_profit": {
+     "mean_estimate": -37.13903607481168,
+     "mean_truth": 34.93260416666667,
+     "bias": -72.07164024147835,
+     "relative_bias": -2.063162537142033,
+     "rmse": 73.53839794894367,
+     "coverage": 0.0,
+     "mean_se": 11.911021332044943,
+     "replications": 10
+    },
+    "contacted": {
+     "mean_estimate": -0.41234191628272426,
+     "mean_truth": 0.07774166666666667,
+     "bias": -0.4900835829493909,
+     "relative_bias": -6.304001495758056,
+     "rmse": 0.490145075346851,
+     "coverage": 0.0,
+     "mean_se": 0.0051846146070645485,
+     "replications": 10
+    }
+   },
+   "budget_split": {
+    "project": {
+     "mean_estimate": 0.007514577522509752,
+     "mean_truth": 0.011449999999999998,
+     "bias": -0.003935422477490245,
+     "relative_bias": -0.3437050198681437,
+     "rmse": 0.0047931614342835455,
+     "coverage": 1.0,
+     "mean_se": 0.0041019126359376455,
+     "replications": 10
+    },
+    "revenue": {
+     "mean_estimate": 0.01366156226006865,
+     "mean_truth": 0.06489583333333257,
+     "bias": -0.05123427107326393,
+     "relative_bias": -0.7894847549010264,
+     "rmse": 2.7533475407706645,
+     "coverage": 0.9,
+     "mean_se": 2.3799396874822705,
+     "replications": 10
+    },
+    "partner_profit": {
+     "mean_estimate": 27.944548045058866,
+     "mean_truth": 34.93260416666667,
+     "bias": -6.9880561216078005,
+     "relative_bias": -0.2000439500091989,
+     "rmse": 11.910804427833547,
+     "coverage": 1.0,
+     "mean_se": 11.886982821854843,
+     "replications": 10
+    },
+    "contacted": {
+     "mean_estimate": 0.05337415874055988,
+     "mean_truth": 0.07774166666666667,
+     "bias": -0.024367507926106778,
+     "relative_bias": -0.3134420571479058,
+     "rmse": 0.025596948531819874,
+     "coverage": 0.1,
+     "mean_se": 0.005662617478400458,
+     "replications": 10
+    }
+   },
+   "region_split": {
+    "project": {
+     "mean_estimate": -0.044910152009207616,
+     "mean_truth": 0.011449999999999998,
+     "bias": -0.05636015200920762,
+     "relative_bias": -4.922284018271409,
+     "rmse": 0.05734805547735469,
+     "coverage": 0.0,
+     "mean_se": 0.00549694529290095,
+     "replications": 10
+    },
+    "revenue": {
+     "mean_estimate": -69.07214820700186,
+     "mean_truth": 0.06489583333333257,
+     "bias": -69.1370440403352,
+     "relative_bias": -1065.3541296745195,
+     "rmse": 69.78347217787935,
+     "coverage": 0.0,
+     "mean_se": 4.1359972785725585,
+     "replications": 10
+    },
+    "partner_profit": {
+     "mean_estimate": -5.258956284042495,
+     "mean_truth": 34.93260416666667,
+     "bias": -40.19156045070916,
+     "relative_bias": -1.150545784074715,
+     "rmse": 43.33153611041389,
+     "coverage": 0.3,
+     "mean_se": 12.950377475283627,
+     "replications": 10
+    },
+    "contacted": {
+     "mean_estimate": -0.29024630569319676,
+     "mean_truth": 0.07774166666666667,
+     "bias": -0.3679879723598634,
+     "relative_bias": -4.733471613590268,
+     "rmse": 0.3713270292051845,
+     "coverage": 0.0,
+     "mean_se": 0.022419155414380734,
+     "replications": 10
+    }
+   },
+   "switchback": {
+    "project": {
+     "mean_estimate": -0.039760056762814626,
+     "mean_truth": 0.011449999999999998,
+     "bias": -0.05121005676281463,
+     "relative_bias": -4.472494040420492,
+     "rmse": 0.060255315896402484,
+     "coverage": 0.3,
+     "mean_se": 0.02506436221254395,
+     "replications": 10
+    },
+    "revenue": {
+     "mean_estimate": -56.881203979710826,
+     "mean_truth": 0.06489583333333257,
+     "bias": -56.94609981304414,
+     "relative_bias": -877.5000934273357,
+     "rmse": 73.91901683733244,
+     "coverage": 0.5,
+     "mean_se": 35.53665969979,
+     "replications": 10
+    },
+    "partner_profit": {
+     "mean_estimate": -12.377356594245201,
+     "mean_truth": 34.93260416666667,
+     "bias": -47.30996076091186,
+     "relative_bias": -1.3543210387405327,
+     "rmse": 56.021605248836764,
+     "coverage": 0.4,
+     "mean_se": 25.074841080588772,
+     "replications": 10
+    },
+    "contacted": {
+     "mean_estimate": -0.2581560228759328,
+     "mean_truth": 0.07774166666666667,
+     "bias": -0.3358976895425994,
+     "relative_bias": -4.320690614761703,
+     "rmse": 0.38092078855983125,
+     "coverage": 0.3,
+     "mean_se": 0.13912052562644311,
+     "replications": 10
+    }
+   }
+  },
+  "aa_budget_split_false_positive_rate": {
+   "project": 0.0,
+   "revenue": 0.1,
+   "partner_profit": 0.0,
+   "contacted": 0.0
+  },
+  "frontier": {
+   "rules": {
+    "requests": 24000,
+    "matched": 0.7442916666666667,
+    "leads": 48785,
+    "leads_per_request": 2.0327083333333333,
+    "contacted": 0.7040416666666667,
+    "project": 0.105875,
+    "revenue": 141.98229166666667,
+    "partner_profit": 101.584375,
+    "partner_profit_per_lead": 49.9748898226914,
+    "wins_per_lead": 0.05208568207440812
+   },
+   "balanced": {
+    "requests": 24000,
+    "matched": 0.8599583333333334,
+    "leads": 46739,
+    "leads_per_request": 1.9474583333333333,
+    "contacted": 0.77475,
+    "project": 0.11775,
+    "revenue": 141.41291666666666,
+    "partner_profit": 135.02458333333334,
+    "partner_profit_per_lead": 69.33374697789854,
+    "wins_per_lead": 0.06046342454909177
+   },
+   "revenue_first": {
+    "requests": 24000,
+    "matched": 0.863125,
+    "leads": 46852,
+    "leads_per_request": 1.9521666666666666,
+    "contacted": 0.778875,
+    "project": 0.11429166666666667,
+    "revenue": 145.34354166666665,
+    "partner_profit": 127.535625,
+    "partner_profit_per_lead": 65.33029539827542,
+    "wins_per_lead": 0.05854605993340733
+   },
+   "homeowner_first": {
+    "requests": 24000,
+    "matched": 0.9048333333333334,
+    "leads": 46689,
+    "leads_per_request": 1.945375,
+    "contacted": 0.8074166666666667,
+    "project": 0.11954166666666667,
+    "revenue": 139.47520833333334,
+    "partner_profit": 141.908125,
+    "partner_profit_per_lead": 72.94641136027758,
+    "wins_per_lead": 0.06144916361455589
+   },
+   "partner_first": {
+    "requests": 24000,
+    "matched": 0.8232916666666666,
+    "leads": 45610,
+    "leads_per_request": 1.9004166666666666,
+    "contacted": 0.7449583333333333,
+    "project": 0.11695833333333333,
+    "revenue": 130.95,
+    "partner_profit": 141.32083333333333,
+    "partner_profit_per_lead": 74.3630782723087,
+    "wins_per_lead": 0.06154352115764087
+   },
+   "balanced_without_pacing": {
+    "requests": 24000,
+    "matched": 0.7810416666666666,
+    "leads": 47011,
+    "leads_per_request": 1.9587916666666667,
+    "contacted": 0.7100833333333333,
+    "project": 0.105,
+    "revenue": 132.94625,
+    "partner_profit": 108.61208333333333,
+    "partner_profit_per_lead": 55.44851205037119,
+    "wins_per_lead": 0.05360447554827594
+   }
+  },
+  "world": {
+   "requests_per_month": 24000,
+   "partners": 1100,
+   "regions": 90,
+   "categories": 7
+  },
+  "truth_by_replication": [
+   {
+    "project": 0.011874999999999997,
+    "revenue": -0.569375000000008,
+    "partner_profit": 33.440208333333345,
+    "contacted": 0.07070833333333337
+   },
+   {
+    "project": 0.011583333333333334,
+    "revenue": -0.047083333333347355,
+    "partner_profit": 37.192916666666676,
+    "contacted": 0.07524999999999993
+   },
+   {
+    "project": 0.012499999999999997,
+    "revenue": 0.8156250000000114,
+    "partner_profit": 34.45104166666667,
+    "contacted": 0.08387500000000003
+   },
+   {
+    "project": 0.011374999999999996,
+    "revenue": 0.4002083333333246,
+    "partner_profit": 34.67895833333334,
+    "contacted": 0.07895833333333335
+   },
+   {
+    "project": 0.013249999999999998,
+    "revenue": 0.021666666666675383,
+    "partner_profit": 43.43249999999999,
+    "contacted": 0.08325000000000005
+   },
+   {
+    "project": 0.011249999999999996,
+    "revenue": -0.3552083333333371,
+    "partner_profit": 38.84270833333332,
+    "contacted": 0.07833333333333325
+   },
+   {
+    "project": 0.009208333333333332,
+    "revenue": 0.10166666666665947,
+    "partner_profit": 30.219166666666666,
+    "contacted": 0.07454166666666673
+   },
+   {
+    "project": 0.011041666666666672,
+    "revenue": -0.3362500000000068,
+    "partner_profit": 29.982083333333335,
+    "contacted": 0.08083333333333331
+   },
+   {
+    "project": 0.011041666666666658,
+    "revenue": 0.2456250000000182,
+    "partner_profit": 34.55854166666667,
+    "contacted": 0.072125
+   },
+   {
+    "project": 0.011374999999999996,
+    "revenue": 0.372083333333336,
+    "partner_profit": 32.52791666666667,
+    "contacted": 0.07954166666666662
+   }
+  ],
+  "global_by_replication": [
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7442916666666667,
+     "leads": 48785,
+     "leads_per_request": 2.0327083333333333,
+     "contacted": 0.7040416666666667,
+     "project": 0.105875,
+     "revenue": 141.98229166666667,
+     "partner_profit": 101.584375,
+     "partner_profit_per_lead": 49.9748898226914,
+     "wins_per_lead": 0.05208568207440812
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8599583333333334,
+     "leads": 46739,
+     "leads_per_request": 1.9474583333333333,
+     "contacted": 0.77475,
+     "project": 0.11775,
+     "revenue": 141.41291666666666,
+     "partner_profit": 135.02458333333334,
+     "partner_profit_per_lead": 69.33374697789854,
+     "wins_per_lead": 0.06046342454909177
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7477083333333333,
+     "leads": 48852,
+     "leads_per_request": 2.0355,
+     "contacted": 0.7044166666666667,
+     "project": 0.10775,
+     "revenue": 141.7675,
+     "partner_profit": 107.19916666666667,
+     "partner_profit_per_lead": 52.664783427495294,
+     "wins_per_lead": 0.052935396708425446
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8672083333333334,
+     "leads": 46810,
+     "leads_per_request": 1.9504166666666667,
+     "contacted": 0.7796666666666666,
+     "project": 0.11933333333333333,
+     "revenue": 141.72041666666667,
+     "partner_profit": 144.39208333333335,
+     "partner_profit_per_lead": 74.0314035462508,
+     "wins_per_lead": 0.06118350779747917
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.74375,
+     "leads": 48875,
+     "leads_per_request": 2.0364583333333335,
+     "contacted": 0.7029583333333334,
+     "project": 0.10845833333333334,
+     "revenue": 141.99833333333333,
+     "partner_profit": 107.59333333333333,
+     "partner_profit_per_lead": 52.833554987212274,
+     "wins_per_lead": 0.05325831202046036
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8731666666666666,
+     "leads": 46807,
+     "leads_per_request": 1.9502916666666668,
+     "contacted": 0.7868333333333334,
+     "project": 0.12095833333333333,
+     "revenue": 142.81395833333335,
+     "partner_profit": 142.044375,
+     "partner_profit_per_lead": 72.83237549939112,
+     "wins_per_lead": 0.06202063793876984
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7424583333333333,
+     "leads": 48781,
+     "leads_per_request": 2.0325416666666665,
+     "contacted": 0.7024583333333333,
+     "project": 0.108125,
+     "revenue": 141.29604166666667,
+     "partner_profit": 106.19145833333333,
+     "partner_profit_per_lead": 52.245648920686335,
+     "wins_per_lead": 0.05319694143211496
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.865375,
+     "leads": 46677,
+     "leads_per_request": 1.944875,
+     "contacted": 0.7814166666666666,
+     "project": 0.1195,
+     "revenue": 141.69625,
+     "partner_profit": 140.87041666666667,
+     "partner_profit_per_lead": 72.43160443044755,
+     "wins_per_lead": 0.06144353750241018
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7450416666666667,
+     "leads": 48798,
+     "leads_per_request": 2.03325,
+     "contacted": 0.7015416666666666,
+     "project": 0.10675,
+     "revenue": 142.53958333333333,
+     "partner_profit": 100.04375,
+     "partner_profit_per_lead": 49.203860813967786,
+     "wins_per_lead": 0.05250215172752982
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8690416666666667,
+     "leads": 46789,
+     "leads_per_request": 1.9495416666666667,
+     "contacted": 0.7847916666666667,
+     "project": 0.12,
+     "revenue": 142.56125,
+     "partner_profit": 143.47625,
+     "partner_profit_per_lead": 73.59486204022313,
+     "wins_per_lead": 0.061552929107268804
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7431666666666666,
+     "leads": 48872,
+     "leads_per_request": 2.0363333333333333,
+     "contacted": 0.704875,
+     "project": 0.11095833333333334,
+     "revenue": 142.803125,
+     "partner_profit": 107.98020833333334,
+     "partner_profit_per_lead": 53.026784252741855,
+     "wins_per_lead": 0.054489278114257654
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8659583333333334,
+     "leads": 46860,
+     "leads_per_request": 1.9525,
+     "contacted": 0.7832083333333333,
+     "project": 0.12220833333333334,
+     "revenue": 142.44791666666666,
+     "partner_profit": 146.82291666666666,
+     "partner_profit_per_lead": 75.1973965002134,
+     "wins_per_lead": 0.06259069568928724
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7414583333333333,
+     "leads": 48721,
+     "leads_per_request": 2.0300416666666665,
+     "contacted": 0.6992083333333333,
+     "project": 0.10708333333333334,
+     "revenue": 142.25479166666668,
+     "partner_profit": 105.54520833333333,
+     "partner_profit_per_lead": 51.99164631267831,
+     "wins_per_lead": 0.05274932780525851
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8599166666666667,
+     "leads": 46669,
+     "leads_per_request": 1.9445416666666666,
+     "contacted": 0.77375,
+     "project": 0.11629166666666667,
+     "revenue": 142.35645833333334,
+     "partner_profit": 135.764375,
+     "partner_profit_per_lead": 69.81818766204547,
+     "wins_per_lead": 0.05980415264951038
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.74125,
+     "leads": 48929,
+     "leads_per_request": 2.038708333333333,
+     "contacted": 0.7022916666666666,
+     "project": 0.108875,
+     "revenue": 142.44291666666666,
+     "partner_profit": 107.64041666666667,
+     "partner_profit_per_lead": 52.79834045249239,
+     "wins_per_lead": 0.05340391179055366
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8697916666666666,
+     "leads": 46875,
+     "leads_per_request": 1.953125,
+     "contacted": 0.783125,
+     "project": 0.11991666666666667,
+     "revenue": 142.10666666666665,
+     "partner_profit": 137.6225,
+     "partner_profit_per_lead": 70.46272,
+     "wins_per_lead": 0.06139733333333333
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7467083333333333,
+     "leads": 48830,
+     "leads_per_request": 2.0345833333333334,
+     "contacted": 0.704875,
+     "project": 0.10720833333333334,
+     "revenue": 141.4125,
+     "partner_profit": 101.89583333333333,
+     "partner_profit_per_lead": 50.081916854392794,
+     "wins_per_lead": 0.052693016588163014
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8650416666666667,
+     "leads": 46689,
+     "leads_per_request": 1.945375,
+     "contacted": 0.777,
+     "project": 0.11825,
+     "revenue": 141.658125,
+     "partner_profit": 136.454375,
+     "partner_profit_per_lead": 70.14296729422348,
+     "wins_per_lead": 0.060785195656364456
+    }
+   },
+   {
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7437916666666666,
+     "leads": 48832,
+     "leads_per_request": 2.034666666666667,
+     "contacted": 0.7015,
+     "project": 0.11033333333333334,
+     "revenue": 141.726875,
+     "partner_profit": 107.923125,
+     "partner_profit_per_lead": 53.04216497378768,
+     "wins_per_lead": 0.05422673656618611
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8651666666666666,
+     "leads": 46696,
+     "leads_per_request": 1.9456666666666667,
+     "contacted": 0.7810416666666666,
+     "project": 0.12170833333333334,
+     "revenue": 142.09895833333334,
+     "partner_profit": 140.45104166666667,
+     "partner_profit_per_lead": 72.18658985780367,
+     "wins_per_lead": 0.06255353777625493
+    }
+   }
+  ]
+ },
+ "heldout": {
+  "set": "v1",
+  "status": "heldout",
+  "profile": "full",
+  "sha256": "4cbd56339337200681bb63db153edb32fa4866d1388f6cd92efb4a537c62ac9e",
+  "summary": {
+   "scenarios": 8,
+   "project_lift_share": 1.0,
+   "mean_project_lift": 0.008471478174603177,
+   "min_revenue_ratio": 0.9952809761942898,
+   "mean_revenue_ratio": 1.0404199453608158,
+   "budget_split_project_covered": 0.625,
+   "request_split_project_covered": 0.125
+  },
+  "results": [
+   {
+    "name": "partner-shortage",
+    "about": "Far more demand than partner capacity, so most requests compete for a small, quickly exhausted pool of partners.",
+    "rules": {
+     "requests": 28000,
+     "matched": 0.22232142857142856,
+     "leads": 12615,
+     "leads_per_request": 0.45053571428571426,
+     "contacted": 0.19282142857142856,
+     "project": 0.028392857142857143,
+     "revenue": 28.900714285714287,
+     "partner_profit": 31.992142857142856,
+     "partner_profit_per_lead": 71.00911613158938,
+     "wins_per_lead": 0.06302021403091558
+    },
+    "model": {
+     "requests": 28000,
+     "matched": 0.2679642857142857,
+     "leads": 12314,
+     "leads_per_request": 0.4397857142857143,
+     "contacted": 0.22110714285714286,
+     "project": 0.03192857142857143,
+     "revenue": 29.869642857142857,
+     "partner_profit": 41.1625,
+     "partner_profit_per_lead": 93.59671918141952,
+     "wins_per_lead": 0.07260029235017054
+    },
+    "truth": {
+     "project": 0.003535714285714288,
+     "revenue": 0.9689285714285703,
+     "partner_profit": 9.170357142857146,
+     "contacted": 0.028285714285714303
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.014268249357380202,
+       "se": 0.0019947662195892004,
+       "lo": -0.01817791930535215,
+       "hi": -0.010358579409408254,
+       "control_mean": 0.03583715596330275
+      },
+      "revenue": {
+       "estimate": -14.169684933439218,
+       "se": 1.0211414954111626,
+       "lo": -16.17108548756447,
+       "hi": -12.168284379313967,
+       "control_mean": 36.518061926605505
+      },
+      "partner_profit": {
+       "estimate": -17.379534910451188,
+       "se": 5.225672566018286,
+       "lo": -27.621664934846038,
+       "hi": -7.1374048860563395,
+       "control_mean": 41.642775229357795
+      },
+      "contacted": {
+       "estimate": -0.10956275730914716,
+       "se": 0.004707227239746498,
+       "lo": -0.11878875316609619,
+       "hi": -0.10033676145219814,
+       "control_mean": 0.2514334862385321
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.0007646549494540571,
+       "se": 0.002020019953861332,
+       "lo": -0.0031945114081664153,
+       "hi": 0.0047238213070745294,
+       "control_mean": 0.029045643153526972
+      },
+      "revenue": {
+       "estimate": 0.7451839319848119,
+       "se": 1.003014541374735,
+       "lo": -1.2206884450796285,
+       "hi": 2.711056309049252,
+       "control_mean": 28.773429675203893
+      },
+      "partner_profit": {
+       "estimate": 3.4390161963461168,
+       "se": 5.277136417437997,
+       "lo": -6.9039811233370845,
+       "hi": 13.782013516029318,
+       "control_mean": 33.2526112462441
+      },
+      "contacted": {
+       "estimate": 0.015789712460310357,
+       "se": 0.004809151132387402,
+       "lo": 0.006363949444621032,
+       "hi": 0.02521547547599968,
+       "control_mean": 0.19537845185291172
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 861,
+      "base_rate": 0.727061556329849,
+      "auc": 0.7144687648698254,
+      "brier": 0.1739138834571378,
+      "logloss": 0.5265127555652087,
+      "ece": 0.026189037617470216,
+      "mean_predicted": 0.7326910783496137
+     },
+     "win": {
+      "n": 780,
+      "base_rate": 0.08205128205128205,
+      "auc": 0.6331289280726257,
+      "brier": 0.0756192623610005,
+      "logloss": 0.27910473307135286,
+      "ece": 0.039833713549250964,
+      "mean_predicted": 0.09988888207532967
+     }
+    }
+   },
+   {
+    "name": "partner-glut",
+    "about": "Many more partners and much more capacity than the demand needs, so the question is which few partners each request should go to.",
+    "rules": {
+     "requests": 9000,
+     "matched": 1.0,
+     "leads": 27000,
+     "leads_per_request": 3.0,
+     "contacted": 0.9825555555555555,
+     "project": 0.15088888888888888,
+     "revenue": 208.08333333333334,
+     "partner_profit": 133.10555555555555,
+     "partner_profit_per_lead": 44.36851851851852,
+     "wins_per_lead": 0.0502962962962963
+    },
+    "model": {
+     "requests": 9000,
+     "matched": 1.0,
+     "leads": 27000,
+     "leads_per_request": 3.0,
+     "contacted": 0.9935555555555555,
+     "project": 0.16466666666666666,
+     "revenue": 208.08333333333334,
+     "partner_profit": 162.37222222222223,
+     "partner_profit_per_lead": 54.12407407407407,
+     "wins_per_lead": 0.05488888888888889
+    },
+    "truth": {
+     "project": 0.013777777777777778,
+     "revenue": 0.0,
+     "partner_profit": 29.26666666666668,
+     "contacted": 0.01100000000000001
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": 0.018651529674396983,
+       "se": 0.007611365512503387,
+       "lo": 0.003733527396720093,
+       "hi": 0.03356953195207387,
+       "control_mean": 0.14495703301673452
+      },
+      "revenue": {
+       "estimate": -1.4273177185678776,
+       "se": 4.274663448289039,
+       "lo": -9.805504123244189,
+       "hi": 6.950868686108434,
+       "control_mean": 208.80936227951153
+      },
+      "partner_profit": {
+       "estimate": 47.55359091590779,
+       "se": 21.382323518954045,
+       "lo": 5.645006912974111,
+       "hi": 89.46217491884147,
+       "control_mean": 110.63885119855269
+      },
+      "contacted": {
+       "estimate": 0.015547189585256138,
+       "se": 0.0023568752381194296,
+       "lo": 0.010927799002487793,
+       "hi": 0.020166580168024483,
+       "control_mean": 0.9796472184531886
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.005727894585879328,
+       "se": 0.00772440693990074,
+       "lo": -0.009411664818257372,
+       "hi": 0.02086745399001603,
+       "control_mean": 0.15689346463742165
+      },
+      "revenue": {
+       "estimate": -4.786316108034299,
+       "se": 4.274631303704454,
+       "lo": -13.164439510482527,
+       "hi": 3.591807294413929,
+       "control_mean": 210.49350940017905
+      },
+      "partner_profit": {
+       "estimate": 33.724925151770634,
+       "se": 21.796262089574242,
+       "lo": -8.994963541390618,
+       "hi": 76.44481384493189,
+       "control_mean": 132.47873769024173
+      },
+      "contacted": {
+       "estimate": 0.007464871310035592,
+       "se": 0.002019664835189822,
+       "lo": 0.0035064009722215175,
+       "hi": 0.011423341647849666,
+       "control_mean": 0.9870188003581021
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 12414,
+      "base_rate": 0.7612373127114548,
+      "auc": 0.6822517833044148,
+      "brier": 0.1667786643246957,
+      "logloss": 0.514537212800731,
+      "ece": 0.011565145587488128,
+      "mean_predicted": 0.7647241127248431
+     },
+     "win": {
+      "n": 8124,
+      "base_rate": 0.05046774987690793,
+      "auc": 0.6544818733123811,
+      "brier": 0.04728560134144942,
+      "logloss": 0.1952506115566722,
+      "ece": 0.007396093680953953,
+      "mean_predicted": 0.05186312047214801
+     }
+    }
+   },
+   {
+    "name": "city-concentrated",
+    "about": "Demand piles up in a few city regions while partner density follows it only weakly, leaving cities saturated and rural regions badly short.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.708875,
+     "leads": 47573,
+     "leads_per_request": 1.9822083333333333,
+     "contacted": 0.6709583333333333,
+     "project": 0.103625,
+     "revenue": 136.308125,
+     "partner_profit": 97.48354166666667,
+     "partner_profit_per_lead": 49.179261345721315,
+     "wins_per_lead": 0.05227755239316419
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8504583333333333,
+     "leads": 45465,
+     "leads_per_request": 1.894375,
+     "contacted": 0.7597083333333333,
+     "project": 0.11670833333333333,
+     "revenue": 142.57770833333333,
+     "partner_profit": 139.97229166666668,
+     "partner_profit_per_lead": 73.88837567359508,
+     "wins_per_lead": 0.06160783019905422
+    },
+    "truth": {
+     "project": 0.013083333333333336,
+     "revenue": 6.269583333333344,
+     "partner_profit": 42.48875000000001,
+     "contacted": 0.08875
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.06956538206893294,
+       "se": 0.00390765055235332,
+       "lo": -0.0772242364157135,
+       "hi": -0.06190652772215238,
+       "control_mean": 0.13815624215021352
+      },
+      "revenue": {
+       "estimate": -78.1912126267349,
+       "se": 2.4820787653085956,
+       "lo": -83.05599761353139,
+       "hi": -73.3264276399384,
+       "control_mean": 182.8636021100226
+      },
+      "partner_profit": {
+       "estimate": -32.39974924850908,
+       "se": 11.60918529345631,
+       "lo": -55.15333431353551,
+       "hi": -9.646164183482657,
+       "control_mean": 117.09453236205309
+      },
+      "contacted": {
+       "estimate": -0.4411011815120745,
+       "se": 0.005265546826730812,
+       "lo": -0.4514214636513761,
+       "hi": -0.4307808993727729,
+       "control_mean": 0.9066398727287951
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.00274564737775998,
+       "se": 0.004010550990445409,
+       "lo": -0.005114888121674464,
+       "hi": 0.010606182877194423,
+       "control_mean": 0.10683653926222
+      },
+      "revenue": {
+       "estimate": 5.54802478743062,
+       "se": 2.4338224128311334,
+       "lo": 0.7778205135152234,
+       "hi": 10.318229061346017,
+       "control_mean": 136.46473478224664
+      },
+      "partner_profit": {
+       "estimate": 21.90817190668004,
+       "se": 11.685248536868977,
+       "lo": -0.9944943759825193,
+       "hi": 44.8108381893426,
+       "control_mean": 103.93829627779165
+      },
+      "contacted": {
+       "estimate": 0.06956803913202203,
+       "se": 0.0058286797791437615,
+       "lo": 0.05814403668748338,
+       "hi": 0.08099204157656067,
+       "control_mean": 0.6772420684486635
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 16081,
+      "base_rate": 0.6857160624339282,
+      "auc": 0.7069659287565876,
+      "brier": 0.19096656508555682,
+      "logloss": 0.5750641751578921,
+      "ece": 0.012304791582679744,
+      "mean_predicted": 0.6877166791717423
+     },
+     "win": {
+      "n": 18490,
+      "base_rate": 0.04813412655489454,
+      "auc": 0.6782594803370786,
+      "brier": 0.044853541930878954,
+      "logloss": 0.1843809884121699,
+      "ece": 0.005156860502750024,
+      "mean_predicted": 0.052087727050658
+     }
+    }
+   },
+   {
+    "name": "wide-quality-spread",
+    "about": "Partners differ far more in how often homeowners buy from them, how reliably they call and how fast, so picking the right partners matters much more.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7371666666666666,
+     "leads": 49133,
+     "leads_per_request": 2.0472083333333333,
+     "contacted": 0.6859166666666666,
+     "project": 0.10133333333333333,
+     "revenue": 140.4775,
+     "partner_profit": 88.935,
+     "partner_profit_per_lead": 43.4420857672033,
+     "wins_per_lead": 0.0494983005312112
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8835,
+     "leads": 46996,
+     "leads_per_request": 1.9581666666666666,
+     "contacted": 0.7804583333333334,
+     "project": 0.1095,
+     "revenue": 139.81458333333333,
+     "partner_profit": 115.24791666666667,
+     "partner_profit_per_lead": 58.8550089369308,
+     "wins_per_lead": 0.0559196527364031
+    },
+    "truth": {
+     "project": 0.00816666666666667,
+     "revenue": -0.6629166666666606,
+     "partner_profit": 26.312916666666666,
+     "contacted": 0.09454166666666675
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.038813500729610206,
+       "se": 0.003920812849547871,
+       "lo": -0.0464981527048459,
+       "hi": -0.031128848754374515,
+       "control_mean": 0.12258226576237126
+      },
+      "revenue": {
+       "estimate": -83.52205592472014,
+       "se": 2.371400907792454,
+       "lo": -88.16991629689893,
+       "hi": -78.87419555254134,
+       "control_mean": 185.92480951184794
+      },
+      "partner_profit": {
+       "estimate": 31.989566139586017,
+       "se": 11.349616920949067,
+       "lo": 9.744725736199463,
+       "hi": 54.23440654297257,
+       "control_mean": 79.22632504395881
+      },
+      "contacted": {
+       "estimate": -0.39339045920556914,
+       "se": 0.005287927998010589,
+       "lo": -0.4037546076345109,
+       "hi": -0.3830263107766274,
+       "control_mean": 0.9044628652767311
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.009157255150956015,
+       "se": 0.003954652161330231,
+       "lo": 0.0014062793433652788,
+       "hi": 0.016908230958546752,
+       "control_mean": 0.10025813972853694
+      },
+      "revenue": {
+       "estimate": -1.583832870072655,
+       "se": 2.3137120954665145,
+       "lo": -6.118625247781723,
+       "hi": 2.950959507636413,
+       "control_mean": 140.1811141643767
+      },
+      "partner_profit": {
+       "estimate": 24.921414747462464,
+       "se": 11.26383425795153,
+       "lo": 2.8447052740490193,
+       "hi": 46.99812422087591,
+       "control_mean": 89.8713464901324
+      },
+      "contacted": {
+       "estimate": 0.06709553774124,
+       "se": 0.005712768540773893,
+       "lo": 0.05589871714930973,
+       "hi": 0.07829235833317026,
+       "control_mean": 0.6968107252893663
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 17353,
+      "base_rate": 0.6649570679421426,
+      "auc": 0.820554442237484,
+      "brier": 0.15790211671143872,
+      "logloss": 0.48226400932455016,
+      "ece": 0.0064953976362528846,
+      "mean_predicted": 0.6590566137904305
+     },
+     "win": {
+      "n": 20057,
+      "base_rate": 0.04836216782170813,
+      "auc": 0.7225857292624819,
+      "brier": 0.04451120046234915,
+      "logloss": 0.1790993793421553,
+      "ece": 0.006740703512796339,
+      "mean_predicted": 0.049361358541011015
+     }
+    }
+   },
+   {
+    "name": "ignored-leads",
+    "about": "Partners on average call only about half the leads they buy, and slowly, so many homeowners risk never getting a call.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7523333333333333,
+     "leads": 50391,
+     "leads_per_request": 2.099625,
+     "contacted": 0.6369583333333333,
+     "project": 0.09133333333333334,
+     "revenue": 148.20395833333333,
+     "partner_profit": 58.50020833333333,
+     "partner_profit_per_lead": 27.86221745946697,
+     "wins_per_lead": 0.043499831319084754
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8657083333333333,
+     "leads": 48166,
+     "leads_per_request": 2.0069166666666667,
+     "contacted": 0.6695833333333333,
+     "project": 0.0985,
+     "revenue": 152.32041666666666,
+     "partner_profit": 84.07958333333333,
+     "partner_profit_per_lead": 41.894905119794046,
+     "wins_per_lead": 0.04908026408670016
+    },
+    "truth": {
+     "project": 0.007166666666666668,
+     "revenue": 4.116458333333327,
+     "partner_profit": 25.579375,
+     "contacted": 0.032625000000000015
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.0612174228847705,
+       "se": 0.0037325552186766135,
+       "lo": -0.0685330966836837,
+       "hi": -0.05390174908585731,
+       "control_mean": 0.12367076948840325
+      },
+      "revenue": {
+       "estimate": -88.54375943523894,
+       "se": 2.595280319057827,
+       "lo": -93.6304153903779,
+       "hi": -83.45710348009997,
+       "control_mean": 199.49217114627817
+      },
+      "partner_profit": {
+       "estimate": -15.922230912001616,
+       "se": 11.206597312580975,
+       "lo": -37.88675803390369,
+       "hi": 6.042296209900453,
+       "control_mean": 73.72226408775015
+      },
+      "contacted": {
+       "estimate": -0.41299073477011994,
+       "se": 0.005554891771689692,
+       "lo": -0.4238781225806496,
+       "hi": -0.40210334695959027,
+       "control_mean": 0.8546428870468057
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": -0.006105690934451152,
+       "se": 0.003806717006671774,
+       "lo": -0.013566719166863951,
+       "hi": 0.0013553372979616457,
+       "control_mean": 0.09925888916645849
+      },
+      "revenue": {
+       "estimate": 5.626526914921385,
+       "se": 2.5032376234462763,
+       "lo": 0.7202713282210462,
+       "hi": 10.532782501621725,
+       "control_mean": 146.53801315679908
+      },
+      "partner_profit": {
+       "estimate": -7.571773842456125,
+       "se": 11.04747537050302,
+       "lo": -29.224427688735336,
+       "hi": 14.080880003823086,
+       "control_mean": 79.82554750603714
+      },
+      "contacted": {
+       "estimate": -0.006103024266284507,
+       "se": 0.006143235406636034,
+       "lo": -0.01814354441184241,
+       "hi": 0.005937495879273395,
+       "control_mean": 0.656590890165709
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 18792,
+      "base_rate": 0.4906875266070668,
+      "auc": 0.7223716038595832,
+      "brier": 0.21260996799483037,
+      "logloss": 0.6132252488753533,
+      "ece": 0.012691712782260884,
+      "mean_predicted": 0.4909936430182937
+     },
+     "win": {
+      "n": 20900,
+      "base_rate": 0.04277511961722488,
+      "auc": 0.6813788078341598,
+      "brier": 0.040201426922521204,
+      "logloss": 0.16838471711106923,
+      "ece": 0.005163367630978499,
+      "mean_predicted": 0.0402047263285832
+     }
+    }
+   },
+   {
+    "name": "expensive-lead-mix",
+    "about": "The category mix shifts toward high-price leads (real-estate sales and heat pumps), where each lead costs partners much more and wasted leads hurt profit.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7447916666666666,
+     "leads": 49681,
+     "leads_per_request": 2.0700416666666666,
+     "contacted": 0.7108333333333333,
+     "project": 0.09883333333333333,
+     "revenue": 240.43666666666667,
+     "partner_profit": 90.41333333333333,
+     "partner_profit_per_lead": 43.67705964050643,
+     "wins_per_lead": 0.04774461061572835
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.8595,
+     "leads": 48320,
+     "leads_per_request": 2.013333333333333,
+     "contacted": 0.785125,
+     "project": 0.10791666666666666,
+     "revenue": 269.88125,
+     "partner_profit": 121.32291666666667,
+     "partner_profit_per_lead": 60.259726821192054,
+     "wins_per_lead": 0.05360099337748345
+    },
+    "truth": {
+     "project": 0.009083333333333332,
+     "revenue": 29.444583333333355,
+     "partner_profit": 30.909583333333345,
+     "contacted": 0.07429166666666664
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.04637602552574259,
+       "se": 0.0038804409607646408,
+       "lo": -0.053981550052975294,
+       "hi": -0.038770500998509885,
+       "control_mean": 0.12417315582349493
+      },
+      "revenue": {
+       "estimate": -79.31986975872809,
+       "se": 4.161901116035313,
+       "lo": -87.47704605337435,
+       "hi": -71.16269346408183,
+       "control_mean": 303.9006112367077
+      },
+      "partner_profit": {
+       "estimate": -5.905788561854422,
+       "se": 17.72813560430249,
+       "lo": -40.65229585932953,
+       "hi": 28.840718735620683,
+       "control_mean": 103.69379552876161
+      },
+      "contacted": {
+       "estimate": -0.3043904094752805,
+       "se": 0.005412432211679164,
+       "lo": -0.31499858167893613,
+       "hi": -0.2937822372716249,
+       "control_mean": 0.8775014652934774
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": -0.0012639798776553496,
+       "se": 0.0039037725340770515,
+       "lo": -0.00891523344828303,
+       "hi": 0.006387273692972332,
+       "control_mean": 0.10242318261304022
+      },
+      "revenue": {
+       "estimate": 29.177071724602882,
+       "se": 4.049599421339736,
+       "lo": 21.240002706962755,
+       "hi": 37.11414074224301,
+       "control_mean": 239.29261387292863
+      },
+      "partner_profit": {
+       "estimate": -1.7183000290437604,
+       "se": 17.200094023828058,
+       "lo": -35.42986484644937,
+       "hi": 31.99326478836185,
+       "control_mean": 102.82579731867766
+      },
+      "contacted": {
+       "estimate": 0.059117283253471764,
+       "se": 0.005615114774288119,
+       "lo": 0.0481118605268083,
+       "hi": 0.07012270598013523,
+       "control_mean": 0.7152968606878175
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 17948,
+      "base_rate": 0.7084911967907288,
+      "auc": 0.7218998143276837,
+      "brier": 0.17970035347756025,
+      "logloss": 0.5816013070815869,
+      "ece": 0.009936664429023951,
+      "mean_predicted": 0.7040693006147378
+     },
+     "win": {
+      "n": 20128,
+      "base_rate": 0.04595588235294118,
+      "auc": 0.6573315261832681,
+      "brier": 0.043128040234823445,
+      "logloss": 0.17957972084955823,
+      "ece": 0.004015572850504252,
+      "mean_predicted": 0.04468011991895176
+     }
+    }
+   },
+   {
+    "name": "frequent-pauses",
+    "about": "About a third of partners pause for part of each month, so capacity seen in the history appears and disappears without warning.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.75775,
+     "leads": 48904,
+     "leads_per_request": 2.0376666666666665,
+     "contacted": 0.709125,
+     "project": 0.10908333333333334,
+     "revenue": 143.19291666666666,
+     "partner_profit": 110.70708333333333,
+     "partner_profit_per_lead": 54.330320628169474,
+     "wins_per_lead": 0.053533453296253884
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.875,
+     "leads": 46809,
+     "leads_per_request": 1.950375,
+     "contacted": 0.7885833333333333,
+     "project": 0.11916666666666667,
+     "revenue": 151.16354166666667,
+     "partner_profit": 137.528125,
+     "partner_profit_per_lead": 70.51368326603858,
+     "wins_per_lead": 0.06109936123395074
+    },
+    "truth": {
+     "project": 0.010083333333333333,
+     "revenue": 7.9706250000000125,
+     "partner_profit": 26.82104166666666,
+     "contacted": 0.0794583333333333
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.056708196145342185,
+       "se": 0.004019253392142138,
+       "lo": -0.06458578803868122,
+       "hi": -0.048830604252003154,
+       "control_mean": 0.13798878003851628
+      },
+      "revenue": {
+       "estimate": -73.24902143104603,
+       "se": 2.5938071779507506,
+       "lo": -78.33279008267098,
+       "hi": -68.16525277942108,
+       "control_mean": 187.31097714142174
+      },
+      "partner_profit": {
+       "estimate": -18.813789069449214,
+       "se": 12.094289400641909,
+       "lo": -42.51816071331187,
+       "hi": 4.890582574413443,
+       "control_mean": 121.47241061709788
+      },
+      "contacted": {
+       "estimate": -0.35856621515022935,
+       "se": 0.005264542419947489,
+       "lo": -0.36888452868840976,
+       "hi": -0.34824790161204894,
+       "control_mean": 0.9055513690027631
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.007503962554312266,
+       "se": 0.004098976811714184,
+       "lo": -0.0005298843701123535,
+       "hi": 0.015537809478736885,
+       "control_mean": 0.11000083270880173
+      },
+      "revenue": {
+       "estimate": 6.133162408237183,
+       "se": 2.5350615830589804,
+       "lo": 1.1645330068504869,
+       "hi": 11.10179180962388,
+       "control_mean": 143.48613539845115
+      },
+      "partner_profit": {
+       "estimate": 28.370169499886998,
+       "se": 12.033801827344542,
+       "lo": 4.784351321199406,
+       "hi": 51.95598767857459,
+       "control_mean": 108.15013739695229
+      },
+      "contacted": {
+       "estimate": 0.06287222286562533,
+       "se": 0.005589246783739068,
+       "lo": 0.05191750046879042,
+       "hi": 0.07382694526246024,
+       "control_mean": 0.716712465650762
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 16744,
+      "base_rate": 0.6936813186813187,
+      "auc": 0.7160669114797753,
+      "brier": 0.18553665171746025,
+      "logloss": 0.5696842177268822,
+      "ece": 0.0159356357187631,
+      "mean_predicted": 0.7049304338304048
+     },
+     "win": {
+      "n": 18341,
+      "base_rate": 0.04896134343819857,
+      "auc": 0.6513238091310329,
+      "brier": 0.045896911571767604,
+      "logloss": 0.18927695433432093,
+      "ece": 0.0036736293719146027,
+      "mean_predicted": 0.051651870459708434
+     }
+    }
+   },
+   {
+    "name": "hesitant-homeowners",
+    "about": "Homeowners are far less ready to buy (about half the usual intent, fewer phone-qualified and fewer urgent requests), so few leads turn into projects.",
+    "rules": {
+     "requests": 24000,
+     "matched": 0.7429583333333334,
+     "leads": 49690,
+     "leads_per_request": 2.0704166666666666,
+     "contacted": 0.7051666666666667,
+     "project": 0.04416666666666667,
+     "revenue": 142.94541666666666,
+     "partner_profit": -42.79125,
+     "partner_profit_per_lead": -20.6679412356611,
+     "wins_per_lead": 0.021332260012074864
+    },
+    "model": {
+     "requests": 24000,
+     "matched": 0.9157083333333333,
+     "leads": 47729,
+     "leads_per_request": 1.9887083333333333,
+     "contacted": 0.813875,
+     "project": 0.04704166666666667,
+     "revenue": 149.04270833333334,
+     "partner_profit": -31.676041666666666,
+     "partner_profit_per_lead": -15.92794736952377,
+     "wins_per_lead": 0.02365438203188837
+    },
+    "truth": {
+     "project": 0.0028750000000000026,
+     "revenue": 6.097291666666678,
+     "partner_profit": 11.115208333333332,
+     "contacted": 0.1087083333333333
+    },
+    "designs": {
+     "request_split": {
+      "project": {
+       "estimate": -0.030334163581232466,
+       "se": 0.0026412058471949654,
+       "lo": -0.0355108319174912,
+       "hi": -0.02515749524497373,
+       "control_mean": 0.05911412542912166
+      },
+      "revenue": {
+       "estimate": -112.65652472950589,
+       "se": 2.4881323855053834,
+       "lo": -117.53317459386417,
+       "hi": -107.7798748651476,
+       "control_mean": 206.31332161098553
+      },
+      "partner_profit": {
+       "estimate": 57.44332898177683,
+       "se": 8.035001095899753,
+       "lo": 41.69501621807345,
+       "hi": 73.19164174548021,
+       "control_mean": -73.80892573055347
+      },
+      "contacted": {
+       "estimate": -0.5169352050172299,
+       "se": 0.004787840700868265,
+       "lo": -0.5263192003546467,
+       "hi": -0.507551209679813,
+       "control_mean": 0.9709453236205309
+      }
+     },
+     "budget_split": {
+      "project": {
+       "estimate": 0.0051532737320498095,
+       "se": 0.002721877547924395,
+       "lo": -0.00018150823221019935,
+       "hi": 0.010488055696309818,
+       "control_mean": 0.044050295611624615
+      },
+      "revenue": {
+       "estimate": 4.714291193455466,
+       "se": 2.422059605597022,
+       "lo": -0.032858401923984815,
+       "hi": 9.461440788834917,
+       "control_mean": 142.7258722624698
+      },
+      "partner_profit": {
+       "estimate": 17.6236401216309,
+       "se": 7.929442413779038,
+       "lo": 2.0822185731396328,
+       "hi": 33.165061670122164,
+       "control_mean": -45.273961195769836
+      },
+      "contacted": {
+       "estimate": 0.08429658908349813,
+       "se": 0.005538823206815341,
+       "lo": 0.07344069508140541,
+       "hi": 0.09515248308559085,
+       "control_mean": 0.7111333166791572
+      }
+     }
+    },
+    "parity_mismatches": 0,
+    "models": {
+     "contact": {
+      "n": 17852,
+      "base_rate": 0.6786354470087386,
+      "auc": 0.7204307306849824,
+      "brier": 0.18967080929461233,
+      "logloss": 0.6066358683427561,
+      "ece": 0.015318547667043193,
+      "mean_predicted": 0.6650113929681836
+     },
+     "win": {
+      "n": 19971,
+      "base_rate": 0.019528316058284513,
+      "auc": 0.6398930674555006,
+      "brier": 0.01908183926959072,
+      "logloss": 0.09484922445827558,
+      "ece": 0.003656170646807907,
+      "mean_predicted": 0.020989090577845263
+     }
+    }
+   }
+  ],
+  "recorded_at": "2026-11-02T20:43:25.443136+00:00",
+  "blind": true
+ },
+ "serving": {
+  "contention": {
+   "requests": 3000,
+   "service_instances": 2,
+   "threads": 8,
+   "cap_squeezed_to": 2,
+   "leads": 2158,
+   "oversold_leads": 0,
+   "reservations_refused_by_database": 10,
+   "decisions_vs_counter_mismatches": 0,
+   "counters_over_cap": 0,
+   "retry_returns_same_decision": true,
+   "p50_ms": 11.673055499841212,
+   "p95_ms": 32.095575749963245,
+   "model": "local"
+  },
+  "latency": {
+   "requests": 2000,
+   "service_instances": 2,
+   "threads": 1,
+   "cap_squeezed_to": null,
+   "leads": 5987,
+   "oversold_leads": 0,
+   "reservations_refused_by_database": 0,
+   "decisions_vs_counter_mismatches": 0,
+   "counters_over_cap": 0,
+   "retry_returns_same_decision": true,
+   "p50_ms": 3.3521525001560804,
+   "p95_ms": 4.65697239999372,
+   "model": "local"
+  }
+ },
+ "metrics": {
+  "prepare.feature_mismatches": 0,
+  "prepare.dbt_failed": 0,
+  "frontier.balanced.project_lift": 0.11216056670602126,
+  "frontier.balanced.revenue_ratio": 0.995989816805206,
+  "frontier.balanced.partner_profit_per_lead_lift": 0.38737168253679943,
+  "frontier.balanced.matched_lift": 0.1156666666666667,
+  "frontier.revenue_first.project_lift": 0.0794962613144432,
+  "frontier.revenue_first.revenue_ratio": 1.0236737269172358,
+  "frontier.revenue_first.partner_profit_per_lead_lift": 0.30726241978850366,
+  "frontier.revenue_first.matched_lift": 0.11883333333333335,
+  "frontier.homeowner_first.project_lift": 0.1290830381739474,
+  "frontier.homeowner_first.revenue_ratio": 0.9823422815345224,
+  "frontier.homeowner_first.partner_profit_per_lead_lift": 0.4596612742737016,
+  "frontier.homeowner_first.matched_lift": 0.1605416666666667,
+  "frontier.partner_first.project_lift": 0.10468319559228645,
+  "frontier.partner_first.revenue_ratio": 0.9222981152285715,
+  "frontier.partner_first.partner_profit_per_lead_lift": 0.48800884876676,
+  "frontier.partner_first.matched_lift": 0.07899999999999996,
+  "frontier.balanced_without_pacing.project_lift": -0.008264462809917328,
+  "frontier.balanced_without_pacing.revenue_ratio": 0.9363579671760709,
+  "frontier.balanced_without_pacing.partner_profit_per_lead_lift": 0.10952744962720184,
+  "frontier.balanced_without_pacing.matched_lift": 0.03674999999999995,
+  "experiments.request_split.project.coverage": 0.0,
+  "experiments.request_split.project.abs_relative_bias": 6.816838171332459,
+  "experiments.request_split.revenue.coverage": 0.0,
+  "experiments.request_split.revenue.abs_relative_bias": 1315.5805948781065,
+  "experiments.request_split.partner_profit.coverage": 0.0,
+  "experiments.request_split.partner_profit.abs_relative_bias": 2.063162537142033,
+  "experiments.request_split.contacted.coverage": 0.0,
+  "experiments.request_split.contacted.abs_relative_bias": 6.304001495758056,
+  "experiments.budget_split.project.coverage": 1.0,
+  "experiments.budget_split.project.abs_relative_bias": 0.3437050198681437,
+  "experiments.budget_split.revenue.coverage": 0.9,
+  "experiments.budget_split.revenue.abs_relative_bias": 0.7894847549010264,
+  "experiments.budget_split.partner_profit.coverage": 1.0,
+  "experiments.budget_split.partner_profit.abs_relative_bias": 0.2000439500091989,
+  "experiments.budget_split.contacted.coverage": 0.1,
+  "experiments.budget_split.contacted.abs_relative_bias": 0.3134420571479058,
+  "experiments.region_split.project.coverage": 0.0,
+  "experiments.region_split.project.abs_relative_bias": 4.922284018271409,
+  "experiments.region_split.revenue.coverage": 0.0,
+  "experiments.region_split.revenue.abs_relative_bias": 1065.3541296745195,
+  "experiments.region_split.partner_profit.coverage": 0.3,
+  "experiments.region_split.partner_profit.abs_relative_bias": 1.150545784074715,
+  "experiments.region_split.contacted.coverage": 0.0,
+  "experiments.region_split.contacted.abs_relative_bias": 4.733471613590268,
+  "experiments.switchback.project.coverage": 0.3,
+  "experiments.switchback.project.abs_relative_bias": 4.472494040420492,
+  "experiments.switchback.revenue.coverage": 0.5,
+  "experiments.switchback.revenue.abs_relative_bias": 877.5000934273357,
+  "experiments.switchback.partner_profit.coverage": 0.4,
+  "experiments.switchback.partner_profit.abs_relative_bias": 1.3543210387405327,
+  "experiments.switchback.contacted.coverage": 0.3,
+  "experiments.switchback.contacted.abs_relative_bias": 4.320690614761703,
+  "experiments.aa_false_positive_rate.project": 0.0,
+  "experiments.aa_false_positive_rate.revenue": 0.1,
+  "experiments.aa_false_positive_rate.partner_profit": 0.0,
+  "experiments.aa_false_positive_rate.contacted": 0.0,
+  "heldout.scenarios": 8,
+  "heldout.project_lift_share": 1.0,
+  "heldout.mean_project_lift": 0.008471478174603177,
+  "heldout.min_revenue_ratio": 0.9952809761942898,
+  "heldout.mean_revenue_ratio": 1.0404199453608158,
+  "heldout.budget_split_project_covered": 0.625,
+  "heldout.request_split_project_covered": 0.125,
+  "serving.oversold_leads": 0,
+  "serving.p95_ms": 4.65697239999372
+ },
+ "gate": {
+  "floors": [
+   {
+    "name": "prepare.feature_mismatches",
+    "op": "==",
+    "value": 0,
+    "about": "training features equal serving features",
+    "actual": 0,
+    "ok": true
+   },
+   {
+    "name": "prepare.dbt_failed",
+    "op": "==",
+    "value": 0,
+    "actual": 0,
+    "ok": true
+   },
+   {
+    "name": "frontier.balanced.project_lift",
+    "op": ">=",
+    "value": 0.0,
+    "about": "the model policy wins at least as many projects as the rules",
+    "actual": 0.11216056670602126,
+    "ok": true
+   },
+   {
+    "name": "frontier.balanced.revenue_ratio",
+    "op": ">=",
+    "value": 0.97,
+    "about": "and keeps lead revenue within 3%",
+    "actual": 0.995989816805206,
+    "ok": true
+   },
+   {
+    "name": "frontier.balanced.partner_profit_per_lead_lift",
+    "op": ">=",
+    "value": 0.0,
+    "actual": 0.38737168253679943,
+    "ok": true
+   },
+   {
+    "name": "experiments.budget_split.project.coverage",
+    "op": ">=",
+    "value": 0.7,
+    "actual": 1.0,
+    "ok": true
+   },
+   {
+    "name": "experiments.aa_false_positive_rate.project",
+    "op": "<=",
+    "value": 0.2,
+    "actual": 0.0,
+    "ok": true
+   },
+   {
+    "name": "heldout.project_lift_share",
+    "op": ">=",
+    "value": 0.75,
+    "about": "the model wins more projects than the rules in most blind worlds",
+    "actual": 1.0,
+    "ok": true
+   },
+   {
+    "name": "heldout.min_revenue_ratio",
+    "op": ">=",
+    "value": 0.9,
+    "actual": 0.9952809761942898,
+    "ok": true
+   },
+   {
+    "name": "serving.oversold_leads",
+    "op": "==",
+    "value": 0,
+    "actual": 0,
+    "ok": true
+   }
+  ],
+  "targets": [
+   {
+    "name": "frontier.balanced.project_lift",
+    "op": ">=",
+    "value": 0.05,
+    "actual": 0.11216056670602126,
+    "ok": true
+   },
+   {
+    "name": "experiments.budget_split.project.abs_relative_bias",
+    "op": "<=",
+    "value": 0.25,
+    "actual": 0.3437050198681437,
+    "ok": false
+   },
+   {
+    "name": "serving.p95_ms",
+    "op": "<=",
+    "value": 50,
+    "actual": 4.65697239999372,
+    "ok": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,8 @@
+name: wide-quality-spread
+about: Partners differ far more in how often homeowners buy from them, how reliably they call and how fast, so picking the right partners matters much more.
+seed: 73021
+overrides:
+  partner:
+    skill: { mean: 0.0, sd: 1.5 }
+    contact_logit: { mean: 1.0, sd: 1.6 }
+    speed_hours: { median: 6, sigma: 1.3 }

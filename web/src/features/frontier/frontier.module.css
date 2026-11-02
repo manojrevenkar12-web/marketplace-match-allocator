@@ -1,0 +1,68 @@
+.wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-m);
+}
+.table {
+  min-width: 44rem;
+}
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: right;
+  border-bottom: 1px solid var(--grid);
+  vertical-align: top;
+}
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+}
+.table thead th {
+  font-size: var(--step--1);
+  color: var(--muted);
+  font-weight: 600;
+  vertical-align: bottom;
+}
+.base {
+  background: var(--paper);
+}
+.table .pick th:first-child {
+  box-shadow: inset 3px 0 0 var(--model);
+}
+.policy {
+  font-weight: 650;
+}
+.note {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.value {
+  display: block;
+  font-weight: 600;
+}
+.delta {
+  display: block;
+  font-size: var(--step--1);
+}
+.up {
+  color: var(--truth);
+}
+.down {
+  color: var(--biased);
+}
+.flat {
+  color: var(--muted);
+}
+.caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.table tbody tr:last-child > * {
+  border-bottom: 0;
+}

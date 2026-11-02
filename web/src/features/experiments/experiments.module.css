@@ -1,0 +1,195 @@
+.hero {
+  display: grid;
+  gap: var(--space-5);
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.verdict {
+  font-size: var(--step-1);
+  margin: 0;
+  max-width: var(--measure);
+}
+.verdict strong {
+  font-weight: 650;
+}
+
+.chart {
+  margin: 0;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(12rem, 17rem) 1fr;
+  column-gap: var(--space-5);
+  align-items: stretch;
+}
+.label {
+  padding-block: var(--space-3);
+}
+.name {
+  font-weight: 650;
+}
+.desc {
+  color: var(--muted);
+  font-size: var(--step--1);
+  line-height: 1.35;
+  display: block;
+}
+.hit {
+  font-size: var(--step--1);
+  display: block;
+  margin-top: var(--space-1);
+}
+.hitMiss {
+  color: var(--biased);
+  font-weight: 600;
+}
+.hitOk {
+  color: var(--truth);
+  font-weight: 600;
+}
+
+.track {
+  position: relative;
+  margin-inline: var(--space-4) var(--space-6);
+  min-height: var(--space-8);
+}
+.row + .row .track {
+  border-top: 1px dashed var(--grid);
+}
+.zero,
+.truth {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+}
+.zero {
+  border-left: 1px solid var(--rule);
+}
+.truth {
+  border-left: 2px solid var(--truth);
+}
+.ci {
+  position: absolute;
+  top: calc(50% - 2px);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--model);
+}
+.ciMiss {
+  background: var(--biased);
+}
+.dot {
+  position: absolute;
+  top: 50%;
+  width: var(--space-3);
+  height: var(--space-3);
+  margin: calc(var(--space-3) / -2) 0 0 calc(var(--space-3) / -2);
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--model);
+}
+.dotMiss {
+  border-color: var(--biased);
+}
+
+.axis {
+  display: grid;
+  grid-template-columns: minmax(12rem, 17rem) 1fr;
+  column-gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+.axisTrack {
+  position: relative;
+  margin-inline: var(--space-4) var(--space-6);
+  height: var(--space-5);
+  border-top: 1px solid var(--rule);
+}
+.tick {
+  position: absolute;
+  top: var(--space-1);
+  transform: translateX(-50%);
+  font-size: var(--step--1);
+  color: var(--muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.axisLabel {
+  font-size: var(--step--1);
+  color: var(--muted);
+  align-self: start;
+  padding-top: var(--space-1);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.swatch {
+  display: inline-block;
+  width: var(--space-5);
+  height: 4px;
+  border-radius: 2px;
+}
+.swTruth {
+  width: 2px;
+  height: var(--space-4);
+  background: var(--truth);
+}
+.swOk {
+  background: var(--model);
+}
+.swMiss {
+  background: var(--biased);
+}
+
+.footnote {
+  color: var(--muted);
+  font-size: var(--step--1);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .chart {
+    padding: var(--space-4);
+  }
+  .row,
+  .axis {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    padding-top: var(--space-3);
+  }
+  .row + .row {
+    border-top: 1px dashed var(--grid);
+  }
+  .track {
+    height: var(--space-7);
+  }
+  .row + .row .track {
+    border-top: 0;
+  }
+  .axisLabel {
+    display: none;
+  }
+}

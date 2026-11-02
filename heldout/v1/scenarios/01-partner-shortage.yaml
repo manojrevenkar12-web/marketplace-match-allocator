@@ -1,0 +1,8 @@
+name: partner-shortage
+about: Far more demand than partner capacity, so most requests compete for a small, quickly exhausted pool of partners.
+seed: 40117
+overrides:
+  requests_per_month: 28000
+  partners: 350
+  partner:
+    cap_median: 34

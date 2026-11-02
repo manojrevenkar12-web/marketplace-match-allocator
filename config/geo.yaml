@@ -1,0 +1,3 @@
+# Public geography the platform knows: two-digit postcode regions on a grid ("10".."99", row-major).
+cols: 10
+first_code: 10

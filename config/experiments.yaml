@@ -1,0 +1,24 @@
+# Experiment designs compared on the evaluation month. Each design assigns requests (and, for the
+# budget split, partner volume) to two arms: the current rules (control) and the model policy.
+designs:
+  request_split:
+    about: "Randomise requests 50/50; both arms draw on the same partner volume"
+    unit: request
+  budget_split:
+    about: "Randomise requests 50/50 and give each arm its own half of every partner's monthly volume"
+    unit: request
+    split_capacity: true
+  region_split:
+    about: "Randomise postcode regions 50/50; partners serving both arms are shared"
+    unit: region
+  switchback:
+    about: "Alternate the policy every 3 days, in random order; volume is shared"
+    unit: period
+    period_days: 3
+metrics:
+  project: "share of requests that became a project with a matched partner"
+  revenue: "lead revenue per request (euros)"
+  partner_profit: "partner gross profit per request (euros, assumed margins)"
+  contacted: "share of requests where a partner called"
+alpha: 0.05
+treatment_share: 0.5

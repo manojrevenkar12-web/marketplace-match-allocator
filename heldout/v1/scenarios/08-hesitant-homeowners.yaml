@@ -1,0 +1,15 @@
+name: hesitant-homeowners
+about: Homeowners are far less ready to buy (about half the usual intent, fewer phone-qualified and fewer urgent requests), so few leads turn into projects.
+seed: 28364
+overrides:
+  categories:
+    solar:            { intent: 0.08 }
+    heat_pump:        { intent: 0.07 }
+    windows:          { intent: 0.09 }
+    roofing:          { intent: 0.075 }
+    kitchen:          { intent: 0.10 }
+    stairlift:        { intent: 0.11 }
+    real_estate_sale: { intent: 0.05 }
+  request:
+    timeframe: { asap: 0.15, months_3: 0.40, later: 0.45 }
+    qualified_share: 0.35

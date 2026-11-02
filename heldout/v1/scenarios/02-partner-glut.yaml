@@ -1,0 +1,8 @@
+name: partner-glut
+about: Many more partners and much more capacity than the demand needs, so the question is which few partners each request should go to.
+seed: 52903
+overrides:
+  requests_per_month: 9000
+  partners: 1500
+  partner:
+    cap_median: 55

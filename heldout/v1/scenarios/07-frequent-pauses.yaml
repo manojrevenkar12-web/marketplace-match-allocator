@@ -1,0 +1,6 @@
+name: frequent-pauses
+about: About a third of partners pause for part of each month, so capacity seen in the history appears and disappears without warning.
+seed: 17789
+overrides:
+  partner:
+    pause_share: 0.35

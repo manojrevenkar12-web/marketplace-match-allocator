@@ -1,0 +1,4 @@
+# Study profiles. "full" is the committed run; "quick" runs in CI in a few minutes on a smaller world.
+full:  { seed: 7, replications: 10, workers: 2, world: {} }
+quick: { seed: 7, replications: 2, workers: 2, heldout_scale: 0.25, world: { requests_per_month: 6000, partners: 300 } }
+heldout_set: v1

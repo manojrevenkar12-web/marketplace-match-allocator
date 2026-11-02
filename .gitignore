@@ -1,0 +1,16 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+runs/
+mlruns/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+web/node_modules/
+web/dist/
+web/public/data/
+web/test-results/
+*.log
+web/playwright-report/
+.ruff_cache/

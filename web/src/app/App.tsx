@@ -1,0 +1,121 @@
+import { MotionConfig } from "motion/react";
+import { Experiments } from "../features/experiments/Experiments";
+import { Frontier } from "../features/frontier/Frontier";
+import { Heldout } from "../features/heldout/Heldout";
+import { Models } from "../features/models/Models";
+import { Production } from "../features/production/Production";
+import { int } from "../shared/lib/format";
+import { useResults } from "../shared/lib/useResults";
+import { Section, slice } from "../shared/ui/Section";
+import s from "./app.module.css";
+
+const runIt = (
+  <p>
+    Run <code>mma report --profile full</code>, then <code>npm run sync</code>.
+  </p>
+);
+
+export function App({ url }: { url?: string }) {
+  const { state, retry } = useResults(url);
+  const study = slice(state, (r) => r.study);
+  const world = state.status === "ready" ? state.data.study?.world : undefined;
+  const reps = state.status === "ready" ? Object.values(state.data.study?.experiments ?? {})[0]?.project?.replications : undefined;
+  return (
+    <MotionConfig reducedMotion="user">
+      <a className={s.skip} href="#experiments">
+        Skip to the results
+      </a>
+      <div className={s.page}>
+        <header className={s.masthead}>
+          <h1 className={s.h1}>Which partners should get each homeowner's request?</h1>
+          <p className={s.lede}>
+            A matching model that spends scarce partner volume where it wins projects, and the experiments that can tell whether it did. In
+            a two-sided market the test and control arms compete for the same partners, so the usual A/B test can report the wrong answer.
+          </p>
+          {world ? (
+            <p className={s.world}>
+              Simulated market with a known truth: {int(world.requests_per_month)} requests a month, {int(world.partners)} partners,{" "}
+              {world.regions} postcode regions, {world.categories} categories.
+            </p>
+          ) : null}
+          <nav aria-label="Sections" className={s.nav}>
+            <a href="#experiments">Experiments</a>
+            <a href="#trade-offs">Trade-offs</a>
+            <a href="#models">Calibration</a>
+            <a href="#heldout">Held-out markets</a>
+            <a href="#production">Production</a>
+          </nav>
+        </header>
+        <main>
+          <Section
+            id="experiments"
+            title="Which experiment can measure the model?"
+            intro={`Four designs ran the model against the current rules${reps ? ` in ${reps} replications of one month` : ""}. The green line is what the model really did, measured by running each policy on the whole market.`}
+            load={study}
+            onRetry={retry}
+            skeletonRows={6}
+            empty={{ title: "No study has been run yet", body: runIt }}
+          >
+            {(st) => <Experiments study={st} />}
+          </Section>
+          <Section
+            id="trade-offs"
+            title="What each weighting gives and gives up"
+            intro="The weights in config/matching.yaml set how much a euro of lead revenue, a homeowner's project and a partner's profit count. Each preset is one point on that trade-off."
+            load={study}
+            onRetry={retry}
+            empty={{ title: "No study has been run yet", body: runIt }}
+          >
+            {(st) => <Frontier study={st} />}
+          </Section>
+          <Section
+            id="models"
+            title="Probabilities that can be taken at face value"
+            intro="Matching multiplies these probabilities by euros, so they have to be right, not only well ranked."
+            load={study}
+            onRetry={retry}
+            empty={{ title: "No models have been trained yet", body: runIt }}
+          >
+            {(st) => <Models study={st} />}
+          </Section>
+          <Section
+            id="heldout"
+            title="Markets the model was never tuned on"
+            intro="Written from a short brief by someone who never saw the code, and run once. The first run is kept as recorded."
+            load={slice(state, (r) => r.heldout)}
+            onRetry={retry}
+            empty={{
+              title: "The held-out markets have not been run",
+              body: (
+                <p>
+                  Run <code>mma heldout --profile full</code> once; the first run is recorded and never rewritten.
+                </p>
+              ),
+            }}
+          >
+            {(h) => <Heldout h={h} />}
+          </Section>
+          <Section
+            id="production"
+            title="Built to run every day"
+            load={slice(state, (r) => r)}
+            onRetry={retry}
+            empty={{ title: "Nothing to show yet", body: runIt }}
+          >
+            {(r) => <Production r={r} />}
+          </Section>
+        </main>
+        {state.status === "ready" ? (
+          <footer className={s.footer}>
+            <p>
+              Generated by <code>mma report</code> on{" "}
+              {new Date(state.data.generated_at).toLocaleString("en-GB", { dateStyle: "long", timeStyle: "short" })}, profile{" "}
+              {state.data.profile}. Every number on this page comes from reports/results.json.
+            </p>
+            <p>All data is simulated. Prices and partner margins are assumptions set in config/, not anyone's real figures.</p>
+          </footer>
+        ) : null}
+      </div>
+    </MotionConfig>
+  );
+}

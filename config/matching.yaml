@@ -1,0 +1,22 @@
+# How the model policy turns predictions into a match. Business settings, not truth.
+max_partners: 3
+# Values in euros per realised project for the homeowner side, and assumed partner gross margin per
+# won project (from partner interviews; used to estimate partner profit per lead).
+home_value:     { solar: 400, heat_pump: 450, windows: 200, roofing: 300, kitchen: 200, stairlift: 300, real_estate_sale: 1200 }
+contact_value:  { solar: 40, heat_pump: 45, windows: 20, roofing: 30, kitchen: 20, stairlift: 30, real_estate_sale: 120 }
+partner_margin: { solar: 2000, heat_pump: 2500, windows: 800, roofing: 1200, kitchen: 1000, stairlift: 1200, real_estate_sale: 8000 }
+price:          { solar: 55, heat_pump: 65, windows: 35, roofing: 45, kitchen: 30, stairlift: 50, real_estate_sale: 300 }
+# Weights of the three sides in the objective. Presets drive the trade-off frontier in the report.
+weights:
+  balanced:        { revenue: 1.0, homeowner: 1.0, partner: 0.5 }
+  revenue_first:   { revenue: 1.0, homeowner: 0.3, partner: 0.1 }
+  homeowner_first: { revenue: 0.4, homeowner: 1.5, partner: 0.3 }
+  partner_first:   { revenue: 0.6, homeowner: 0.8, partner: 1.2 }
+default_weights: balanced
+pacing:
+  # Bid price in euros per unit of a partner's capacity (the value a lead must bring to use it), by
+  # dual descent: + step_eur x (share of volume used - share of month elapsed) every recompute_hours,
+  # floored at 0 and capped at max_bid_eur.
+  step_eur: 60
+  max_bid_eur: 300
+  recompute_hours: 6

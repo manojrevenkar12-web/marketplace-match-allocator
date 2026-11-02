@@ -1,0 +1,12 @@
+name: expensive-lead-mix
+about: The category mix shifts toward high-price leads (real-estate sales and heat pumps), where each lead costs partners much more and wasted leads hurt profit.
+seed: 90233
+overrides:
+  categories:
+    solar:            { share: 0.22 }
+    heat_pump:        { share: 0.28 }
+    windows:          { share: 0.08 }
+    roofing:          { share: 0.07 }
+    kitchen:          { share: 0.04 }
+    stairlift:        { share: 0.06 }
+    real_estate_sale: { share: 0.25 }
