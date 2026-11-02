@@ -24,7 +24,8 @@ export function Frontier({ study }: { study: Study }) {
   const base = study.frontier.rules;
   const names = Object.keys(study.frontier);
   return (
-    <div className={s.wrap} role="region" aria-label="Policies compared on the same requests" tabIndex={0}>
+    // biome-ignore lint/a11y/noNoninteractiveTabindex: a table that scrolls sideways must be reachable by keyboard
+    <section className={s.wrap} aria-label="Policies compared on the same requests" tabIndex={0}>
       <table className={s.table}>
         <caption className={s.caption}>
           {int(base.requests)} requests of one month, every policy run on the same requests and partner volume. Changes are against the
@@ -66,6 +67,6 @@ export function Frontier({ study }: { study: Study }) {
           })}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 }

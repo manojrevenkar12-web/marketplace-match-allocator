@@ -28,7 +28,8 @@ export function Heldout({ h }: { h: HeldoutData }) {
         </span>
         <p>{lead(h)}</p>
       </div>
-      <div className={s.wrap} role="region" aria-label="Held-out markets" tabIndex={0}>
+      {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a table that scrolls sideways must be reachable by keyboard */}
+      <section className={s.wrap} aria-label="Held-out markets" tabIndex={0}>
         <table className={s.table}>
           <thead>
             <tr>
@@ -63,7 +64,7 @@ export function Heldout({ h }: { h: HeldoutData }) {
             })}
           </tbody>
         </table>
-      </div>
+      </section>
     </div>
   );
 }
